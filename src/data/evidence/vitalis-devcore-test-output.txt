@@ -1,0 +1,7 @@
+﻿py : E:\Python310\python.exe: can't open file 'E:\\tests\\test_devcore.py': [Errno 2] No such file or directory
+At line:5 char:1
++ py -3.10 tests/test_devcore.py 2>&1 | Out-File "E:\vitalis-devcore-bu ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (E:\Python310\py...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

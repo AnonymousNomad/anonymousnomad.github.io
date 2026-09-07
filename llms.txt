@@ -1,0 +1,66 @@
+# Neuro_Nomad Portfolio
+
+> Sovereign systems. Local-first. Forever offline.
+
+Personal portfolio of Neuro_Nomad (GitHub: @AnonymousNomad) — licensed electrician turned self-taught solo developer. Builds offline-first systems where failure is expensive: AI runtimes, training pipelines, low-level OS integration, and security controls that must prove what they did.
+
+## Site
+
+- **URL:** https://anonymousnomad.github.io/
+- **Stack:** Plain HTML5 + CSS custom properties + native ES modules. No build step. No framework. No Tailwind. No web fonts. No CDN. No analytics. No cookies. No third-party scripts.
+- **License:** Apache-2.0
+- **Source:** https://github.com/AnonymousNomad/anonymousnomad.github.io
+
+## Design tokens
+
+- **Matrix green** `#00FF41` — "system is running" semantic
+- **Neon purple** `#A855F7` — section headers, primary accents
+- **Neon blue** `#3B82F6` — links, secondary
+- **Cyan-400** `#22D3EE` — GhostCode section only
+- **Deep black** `#050507` — all backgrounds
+- **Off-white** `#E5E7EB` — body text
+- **System font stack:** `-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif`
+
+## Sections (top to bottom)
+
+1. **Hero** — AIDE flagship, 9-step closed loop, matrix-green accent
+2. **About** — Electrician → AI architect, 3 evidence areas, "How I work" pipeline
+3. **AIDE Sovereign Workbench** — flagship, 3 model packs, closed-loop expansion
+4. **GhostCode** — concept demo, cyan island, user journey terminal
+5. **Vitalis (Core + Devcore)** — cognitive engines, Tri-Head architecture, 8 + 6 chapters
+6. **Cyber SOP Harness** — security governance, 5-step loop, key types, test coverage
+7. **LOREIN** — persistent intelligence, 5-year timeline, 4 components
+
+## Repos showcased
+
+| ID | Name | Role | Language | License |
+|----|------|------|----------|---------|
+| aide-sovereign-workbench | AIDE Sovereign Workbench | flagship | TypeScript | Apache-2.0 |
+| ghostcode | GhostCode | concept-demo | TypeScript | Apache-2.0 |
+| vitalis-core | Vitalis Core (Neuro-Synth Engine) | cognitive-engine | Python | MIT |
+| vitalis-devcore | Vitalis Devcore | cognitive-engine | Python | MIT |
+| cyber-sop-harness | Cyber SOP Harness | security | C# | MIT |
+| lorein-sovereign-entity | LOREIN — Sovereign Entity | architecture | Docs + PDFs | Apache-2.0 |
+
+All repos are open source. All projects are local-first. All demos are honest about their state (active, development-preview, concept-demo, research).
+
+## How to interact with this site
+
+- Scroll through sections (smooth scroll, sticky header with nav)
+- Hover any card to see glow + lift effect
+- Click the "View on GitHub" CTA on any project to open the source repo
+- For AIDE: there is no live demo on the site; the README in the repo has the quickstart
+- For GhostCode: a concept demo; the repo is the source of truth
+
+## For AI agents
+
+This site was built to be readable by humans AND by AI agents. The structure is semantic. The content is honest. The data layer (`src/data/repos.js`) is the single source of truth for project metadata. The skills I created to design this site are in the portfolio-research repo (TBD location).
+
+## Contact
+
+- GitHub: https://github.com/AnonymousNomad
+- Sponsors: https://github.com/sponsors/AnonymousNomad
+
+---
+
+Last updated: 2026-09-07

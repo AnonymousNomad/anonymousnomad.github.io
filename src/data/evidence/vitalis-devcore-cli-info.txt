@@ -1,0 +1,5 @@
+﻿Vitalis_Devcore (exoskeleton reference implementation)
+  engine:       InferenceEngine (vitalis_ide.brain)
+  default model: stub (echo + 0.7 confidence)
+  ledger path:  ~/.vitalis_workspace/truth_ledger.json
+  kernel dim:   10000 (HDC bipolar vectors)

@@ -1,0 +1,13 @@
+﻿[reasoning ┬╖ 4 step(s)]
+   1. (c=0.95) Parse: "what is the Free Energy Principle?"
+   2. (c=0.75) Identify the literal subject: "what is the Free Energy Princi"
+   3. (c=0.30 ΓÜá) No domain-specific knowledge of "what is the Free Energy Princi" beyond the prompt itself.
+   4. (c=0.90) Prefer honest uncertainty over fabricated specificity.
+
+[talking]
+  I do not have specific knowledge of "what is the Free Energy Principle" beyond what you have provided. Share more context and I can engage with the substance.
+
+[journal]
+  seq   : 2
+  hash  : e90b37c0614bdae1...
+  prev  : f0db2d7a94385af8...

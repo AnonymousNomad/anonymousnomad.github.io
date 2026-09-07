@@ -1,0 +1,27 @@
+# Dependencies / build
+node_modules/
+dist/
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Local env
+.env
+.env.local
+.env.*.local
+
+# Misc
+.cache/
+.tmp/

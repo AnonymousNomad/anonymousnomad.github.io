@@ -1,0 +1,4 @@
+﻿LOREIN identity (derived from journal chain)
+  entries  : 3
+  identity : e90b37c0614bdae1...2a12ce32
+  full     : e90b37c0614bdae1902a31e16155a8ddb4fe77e54976f7c8652d9fd92a12ce32

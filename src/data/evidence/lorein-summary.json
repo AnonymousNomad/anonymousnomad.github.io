@@ -1,0 +1,19 @@
+{
+  "name": "lorein",
+  "version": "0.1.0",
+  "canonical_entry": "lorein.cli:main",
+  "console_script": "lorein",
+  "python_required": ">=3.10",
+  "test_status": "16/16 passing",
+  "implemented_components": [
+    "MIRROR Framework (dual-process: Reasoning vs Talking)",
+    "Cryptographic Journal (append-only, content-hash chained, tamper-evident)"
+  ],
+  "roadmap_components": [
+    "The Room (Firecracker MicroVMs) — see white papers",
+    "Active Inference (FEP) — see white papers"
+  ],
+  "command_to_run_after_install": "lorein reflect \"what is sovereign AI?\"",
+  "verified_on": "2026-09-07",
+  "platform": "Windows 11, Python 3.10.11"
+}

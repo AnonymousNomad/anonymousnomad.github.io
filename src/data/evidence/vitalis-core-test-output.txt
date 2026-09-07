@@ -1,0 +1,23 @@
+﻿py : test_brain_constructs (__main__.TestBrain) ... ok
+At line:5 char:8
++ $out = py -3.10 tests/test_vitalis.py 2>&1 | Out-String
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_brain_cons...stBrain) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_brain_generate_returns_text (__main__.TestBrain) ... ok
+test_brain_trusted_when_db_seeded (__main__.TestBrain) ... ok
+test_cli_help (__main__.TestCLI) ... ok
+test_cli_info (__main__.TestCLI) ... ok
+test_cli_prompt (__main__.TestCLI) ... ok
+test_works_without_weights (__main__.TestExoskeleton) ... ok
+test_brain_imports (__main__.TestImports) ... ok
+test_cli_imports (__main__.TestImports) ... ok
+test_rnn_imports (__main__.TestImports) ... ok
+test_vitalis_imports (__main__.TestImports) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.827s
+
+OK
+

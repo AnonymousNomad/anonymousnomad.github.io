@@ -1,0 +1,9 @@
+﻿Vitalis Brain (NumPy reference implementation)
+  vocab_size:  4000
+  embed_dim:   128
+  hidden_dim:  256
+  lora_rank:   8
+  db_path:     E:\vitalis-core-build\sare_ledger.db
+  weight_path: E:\vitalis-core-build\vitalis\data\weights\model.bin
+  trusted:     True
+

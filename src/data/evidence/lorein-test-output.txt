@@ -1,0 +1,28 @@
+﻿py : test_cli_help (__main__.TestCLI) ... ok
+At line:5 char:8
++ $out = py -3.10 tests/test_lorein.py 2>&1 | Out-String
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_cli_help (__main__.TestCLI) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_cli_identity_changes_with_appends (__main__.TestCLI) ... ok
+test_cli_reflect_writes_journal (__main__.TestCLI) ... ok
+test_cli_replay (__main__.TestCLI) ... ok
+test_cli_verify_ok (__main__.TestCLI) ... ok
+test_journal_imports (__main__.TestImports) ... ok
+test_lorein_imports (__main__.TestImports) ... ok
+test_mirror_imports (__main__.TestImports) ... ok
+test_identity_derives_from_chain (__main__.TestJournal) ... ok
+test_journal_append_chains (__main__.TestJournal) ... ok
+test_journal_detects_tampering (__main__.TestJournal) ... ok
+test_journal_verify_intact (__main__.TestJournal) ... ok
+test_journal_writes_genesis (__main__.TestJournal) ... ok
+test_reflect_accepts_custom_model (__main__.TestMirror) ... ok
+test_reflect_produces_dual_process (__main__.TestMirror) ... ok
+test_reflect_rejects_empty_prompt (__main__.TestMirror) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 2.112s
+
+OK
+

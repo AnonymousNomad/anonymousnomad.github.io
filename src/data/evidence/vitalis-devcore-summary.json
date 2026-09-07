@@ -1,0 +1,10 @@
+{
+  "name": "vitalis_devcore",
+  "version": "0.1.0",
+  "canonical_entry": "devcore_cli:main",
+  "console_script": "devcore",
+  "python_required": ">=3.10",
+  "test_status": "13/13 passing",
+  "verified_on": "2026-09-07",
+  "platform": "Windows 11, Python 3.10.11, numpy 2.2.6"
+}

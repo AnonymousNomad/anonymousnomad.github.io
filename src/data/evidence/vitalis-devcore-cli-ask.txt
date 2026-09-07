@@ -1,0 +1,6 @@
+﻿{
+  "answer": "[stub] received: what is sovereign AI?",
+  "confidence": 0.7,
+  "classification": "confident",
+  "entry_id": "409b410d"
+}
