@@ -40,6 +40,16 @@ let loreinVerify = '';
 let loreinReplay = '';
 let loreinJournal = '';
 
+/**
+ * Resolve a section's `items`/`lines`/`json` fields against the loaded
+ * evidence. Each field can be a string (literal), a value, or a function
+ * that receives the loaded evidence and returns the rendered value.
+ */
+function resolveField(field, evidence) {
+  if (typeof field === 'function') return field(evidence);
+  return field;
+}
+
 const JSON_FILES = {
   ghostcodeGhost:         '../../data/evidence/ghostcode-ghost.json',
   ghostcodeThrow:         '../../data/evidence/ghostcode-throw-frame.json',
@@ -143,42 +153,42 @@ const PROOFS = [
       {
         kind: 'terminal',
         title: 'Test Output · npm test',
-        lines: ghostcodeTestOutput,
+        lines: () => ghostcodeTestOutput,
       },
       {
         kind: 'stats',
         title: 'Live Capture · npm run demo:clone',
-        items: [
-          { value: String(ghostcodeStats.frameCount), label: 'Frames' },
-          { value: `${ghostcodeStats.totalHeapBytes.toLocaleString()} B`, label: 'Heap tracked' },
-          { value: ghostcodeStats.throwSiteAt !== null ? '✓' : '—', label: 'Throw site', sublabel: 'at frame' },
-          { value: String(ghostcodeStats.allocationCount), label: 'Allocations' },
-        ],
+        items: () => ghostcodeStats ? [
+          { value: String(ghostcodeStats.frameCount ?? '?'), label: 'Frames' },
+          { value: `${(ghostcodeStats.totalHeapBytes ?? 0).toLocaleString()} B`, label: 'Heap tracked' },
+          { value: (ghostcodeStats.throwSiteAt !== null && ghostcodeStats.throwSiteAt !== undefined) ? '✓' : '—', label: 'Throw site', sublabel: 'at frame' },
+          { value: String(ghostcodeStats.allocationCount ?? '?'), label: 'Allocations' },
+        ] : [],
       },
       {
         kind: 'json',
         title: 'Captured Ghost · canonical-capture.json',
-        json: ghostcodeGhost,
+        json: () => ghostcodeGhost,
       },
       {
         kind: 'json',
         title: 'Session Start · env scrubbed at capture',
-        json: ghostcodeSessionStart,
+        json: () => ghostcodeSessionStart,
       },
       {
         kind: 'json',
         title: 'Inbound Request · one captured HTTP request',
-        json: ghostcodeInboundReq,
+        json: () => ghostcodeInboundReq,
       },
       {
         kind: 'json',
         title: 'Inbound Response · matching response',
-        json: ghostcodeInboundRes,
+        json: () => ghostcodeInboundRes,
       },
       {
         kind: 'json',
         title: 'TimelineFrame · at the throw site',
-        json: ghostcodeThrow,
+        json: () => ghostcodeThrow,
       },
     ],
   },
@@ -190,32 +200,32 @@ const PROOFS = [
       {
         kind: 'stats',
         title: 'Test Results · 11/11 pass',
-        items: [
+        items: () => vitalisCoreSummary ? [
           { value: '11/11', label: 'Tests', sublabel: 'unittest' },
           { value: vitalisCoreSummary.python_required, label: 'Python', sublabel: 'min version' },
           { value: '1', label: 'Canonical entry', sublabel: vitalisCoreSummary.canonical_entry },
           { value: '4', label: 'Archived impls', sublabel: 'in _archive/' },
-        ],
+        ] : [],
       },
       {
         kind: 'terminal',
         title: 'Test Output · py -3.10 tests/test_vitalis.py',
-        lines: vitalisCoreTestOutput,
+        lines: () => vitalisCoreTestOutput,
       },
       {
         kind: 'json',
         title: 'Run Summary',
-        json: vitalisCoreSummary,
+        json: () => vitalisCoreSummary,
       },
       {
         kind: 'terminal',
         title: 'CLI · fsi-chat --info',
-        lines: vitalisCoreInfo,
+        lines: () => vitalisCoreInfo,
       },
       {
         kind: 'terminal',
         title: 'CLI · fsi-chat --prompt "hello world"',
-        lines: vitalisCorePrompt,
+        lines: () => vitalisCorePrompt,
       },
     ],
   },
@@ -227,42 +237,42 @@ const PROOFS = [
       {
         kind: 'stats',
         title: 'Test Results · 13/13 pass',
-        items: [
+        items: () => vitalisDevcoreSummary ? [
           { value: '13/13', label: 'Tests', sublabel: 'unittest' },
           { value: vitalisDevcoreSummary.python_required, label: 'Python', sublabel: 'min version' },
           { value: '1', label: 'Canonical entry', sublabel: vitalisDevcoreSummary.canonical_entry },
           { value: '4', label: 'CLI commands', sublabel: 'info, ask, think, replay' },
-        ],
+        ] : [],
       },
       {
         kind: 'terminal',
         title: 'Test Output · py -3.10 tests/test_devcore.py',
-        lines: vitalisDevcoreTestOutput,
+        lines: () => vitalisDevcoreTestOutput,
       },
       {
         kind: 'json',
         title: 'Run Summary',
-        json: vitalisDevcoreSummary,
+        json: () => vitalisDevcoreSummary,
       },
       {
         kind: 'terminal',
         title: 'CLI · devcore info',
-        lines: vitalisDevcoreInfo,
+        lines: () => vitalisDevcoreInfo,
       },
       {
         kind: 'terminal',
         title: 'CLI · devcore ask "what is sovereign AI?"',
-        lines: vitalisDevcoreAsk,
+        lines: () => vitalisDevcoreAsk,
       },
       {
         kind: 'terminal',
         title: 'CLI · devcore think "neural manifolds"',
-        lines: vitalisDevcoreThink,
+        lines: () => vitalisDevcoreThink,
       },
       {
         kind: 'terminal',
         title: 'CLI · devcore replay (truth ledger)',
-        lines: vitalisDevcoreReplay,
+        lines: () => vitalisDevcoreReplay,
       },
     ],
   },
@@ -274,52 +284,52 @@ const PROOFS = [
       {
         kind: 'stats',
         title: 'Test Results · 16/16 pass',
-        items: [
+        items: () => loreinSummary ? [
           { value: '16/16', label: 'Tests', sublabel: 'unittest' },
           { value: loreinSummary.python_required, label: 'Python', sublabel: 'min version' },
           { value: '1', label: 'Canonical entry', sublabel: loreinSummary.canonical_entry },
           { value: '4', label: 'CLI commands', sublabel: 'reflect/identity/replay/verify' },
-        ],
+        ] : [],
       },
       {
         kind: 'terminal',
         title: 'Test Output · py -3.10 tests/test_lorein.py',
-        lines: loreinTestOutput,
+        lines: () => loreinTestOutput,
       },
       {
         kind: 'json',
         title: 'Run Summary',
-        json: loreinSummary,
+        json: () => loreinSummary,
       },
       {
         kind: 'terminal',
         title: 'CLI · lorein reflect "what is sovereign AI?"',
-        lines: loreinReflect,
+        lines: () => loreinReflect,
       },
       {
         kind: 'terminal',
         title: 'CLI · lorein reflect (second call — identity drifts)',
-        lines: loreinReflect2,
+        lines: () => loreinReflect2,
       },
       {
         kind: 'terminal',
         title: 'CLI · lorein identity (derived from journal chain)',
-        lines: loreinIdentity,
+        lines: () => loreinIdentity,
       },
       {
         kind: 'terminal',
         title: 'CLI · lorein verify (chain integrity)',
-        lines: loreinVerify,
+        lines: () => loreinVerify,
       },
       {
         kind: 'terminal',
         title: 'CLI · lorein replay (recent entries)',
-        lines: loreinReplay,
+        lines: () => loreinReplay,
       },
       {
         kind: 'terminal',
         title: 'Sample journal · tamper-evident JSONL chain',
-        lines: loreinJournal,
+        lines: () => loreinJournal,
       },
     ],
   },
@@ -351,15 +361,16 @@ export async function mountProofGallery(root) {
     for (const section of proof.sections) {
       const slot = document.createElement('div');
       block.appendChild(slot);
-      // If a terminal panel has no text yet, show a load-failed notice.
-      const lines = (section.lines || '').trim()
-        || (section.kind === 'terminal' ? '(evidence file not loaded)' : '');
+      // Resolve any function fields against the now-loaded evidence.
+      const items = typeof section.items === 'function' ? section.items() : section.items;
+      const lines = (typeof section.lines === 'function' ? section.lines() : section.lines) || '';
+      const json  = typeof section.json  === 'function' ? section.json()  : section.json;
       mountProofPanel(slot, {
         mode: section.kind,
         title: section.title,
-        items: section.items,
-        lines,
-        json: section.json,
+        items,
+        lines: lines.trim() || (section.kind === 'terminal' ? '(evidence file not loaded)' : ''),
+        json,
         accent: proof.color,
         liveBadge: true,
       });
