@@ -15,18 +15,30 @@ import { mountCyber } from './components/sections/cyber.js';
 import { mountLorein } from './components/sections/lorein.js';
 import { mountFooter } from './components/footer.js';
 
-// Mount sections as soon as DOM is ready.
+// Mount sections as soon as DOM is ready. Each section is wrapped in try/catch
+// so a single failure (e.g. a broken import) doesn't blank the whole page.
+function safeMount(name, fn, target) {
+  try {
+    const result = fn(target);
+    if (result && typeof result.then === 'function') {
+      result.catch((e) => console.error(`[${name}] async mount failed:`, e));
+    }
+  } catch (e) {
+    console.error(`[${name}] mount failed:`, e);
+  }
+}
+
 function mount() {
-  mountHeader(document.getElementById('site-header'));
-  mountHero(document.getElementById('hero'));
-  mountAbout(document.getElementById('about'));
-  mountAide(document.getElementById('aide'));
-  mountGhostcode(document.getElementById('ghostcode'));
-  mountProofGallery(document.getElementById('proof'));
-  mountVitalis(document.getElementById('vitalis'));
-  mountCyber(document.getElementById('cyber'));
-  mountLorein(document.getElementById('lorein'));
-  mountFooter(document.getElementById('site-footer'));
+  safeMount('header',    mountHeader,       document.getElementById('site-header'));
+  safeMount('hero',      mountHero,         document.getElementById('hero'));
+  safeMount('about',     mountAbout,        document.getElementById('about'));
+  safeMount('aide',      mountAide,         document.getElementById('aide'));
+  safeMount('ghostcode', mountGhostcode,    document.getElementById('ghostcode'));
+  safeMount('proof',     mountProofGallery, document.getElementById('proof'));
+  safeMount('vitalis',   mountVitalis,      document.getElementById('vitalis'));
+  safeMount('cyber',     mountCyber,        document.getElementById('cyber'));
+  safeMount('lorein',    mountLorein,       document.getElementById('lorein'));
+  safeMount('footer',    mountFooter,       document.getElementById('site-footer'));
 
   // Set up intersection-observer based reveal animations.
   setupRevealOnScroll();

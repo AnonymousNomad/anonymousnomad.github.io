@@ -4,6 +4,9 @@
  * inspectable JSON viewers.
  *
  * Used at the bottom of section pages to prove "this is real, not a mock".
+ *
+ * Text files (.txt, .jsonl) are loaded at runtime via fetch() because the
+ * static site can't use Vite's `?raw` import (no bundler at deploy time).
  */
 
 import { mountProofPanel } from './proof-panel.js';
@@ -13,28 +16,84 @@ import ghostcodeStats from '../../data/evidence/ghostcode-stats.json';
 import ghostcodeSessionStart from '../../data/evidence/ghostcode-session-start.json';
 import ghostcodeInboundReq from '../../data/evidence/ghostcode-inbound-request.json';
 import ghostcodeInboundRes from '../../data/evidence/ghostcode-inbound-response.json';
-import ghostcodeTestOutput from '../../data/evidence/ghostcode-test-output.txt?raw';
 
 import vitalisCoreSummary from '../../data/evidence/vitalis-core-summary.json';
-import vitalisCoreTestOutput from '../../data/evidence/vitalis-core-test-output.txt?raw';
-import vitalisCoreInfo from '../../data/evidence/vitalis-core-cli-info.txt?raw';
-import vitalisCorePrompt from '../../data/evidence/vitalis-core-cli-prompt.txt?raw';
 
 import vitalisDevcoreSummary from '../../data/evidence/vitalis-devcore-summary.json';
-import vitalisDevcoreTestOutput from '../../data/evidence/vitalis-devcore-test-output.txt?raw';
-import vitalisDevcoreInfo from '../../data/evidence/vitalis-devcore-cli-info.txt?raw';
-import vitalisDevcoreAsk from '../../data/evidence/vitalis-devcore-cli-ask.txt?raw';
-import vitalisDevcoreThink from '../../data/evidence/vitalis-devcore-cli-think.txt?raw';
-import vitalisDevcoreReplay from '../../data/evidence/vitalis-devcore-cli-replay.txt?raw';
 
 import loreinSummary from '../../data/evidence/lorein-summary.json';
-import loreinTestOutput from '../../data/evidence/lorein-test-output.txt?raw';
-import loreinReflect from '../../data/evidence/lorein-cli-reflect.txt?raw';
-import loreinReflect2 from '../../data/evidence/lorein-cli-reflect-2.txt?raw';
-import loreinIdentity from '../../data/evidence/lorein-cli-identity.txt?raw';
-import loreinVerify from '../../data/evidence/lorein-cli-verify.txt?raw';
-import loreinReplay from '../../data/evidence/lorein-cli-replay.txt?raw';
-import loreinJournal from '../../data/evidence/lorein-sample-journal.jsonl?raw';
+
+// All text-content placeholders; populated at runtime via fetch().
+let ghostcodeTestOutput = '';
+let vitalisCoreTestOutput = '';
+let vitalisCoreInfo = '';
+let vitalisCorePrompt = '';
+let vitalisDevcoreTestOutput = '';
+let vitalisDevcoreInfo = '';
+let vitalisDevcoreAsk = '';
+let vitalisDevcoreThink = '';
+let vitalisDevcoreReplay = '';
+let loreinTestOutput = '';
+let loreinReflect = '';
+let loreinReflect2 = '';
+let loreinIdentity = '';
+let loreinVerify = '';
+let loreinReplay = '';
+let loreinJournal = '';
+
+const TEXT_FILES = {
+  ghostcodeTestOutput:     '../../data/evidence/ghostcode-test-output.txt',
+  vitalisCoreTestOutput:    '../../data/evidence/vitalis-core-test-output.txt',
+  vitalisCoreInfo:         '../../data/evidence/vitalis-core-cli-info.txt',
+  vitalisCorePrompt:       '../../data/evidence/vitalis-core-cli-prompt.txt',
+  vitalisDevcoreTestOutput: '../../data/evidence/vitalis-devcore-test-output.txt',
+  vitalisDevcoreInfo:      '../../data/evidence/vitalis-devcore-cli-info.txt',
+  vitalisDevcoreAsk:       '../../data/evidence/vitalis-devcore-cli-ask.txt',
+  vitalisDevcoreThink:     '../../data/evidence/vitalis-devcore-cli-think.txt',
+  vitalisDevcoreReplay:    '../../data/evidence/vitalis-devcore-cli-replay.txt',
+  loreinTestOutput:        '../../data/evidence/lorein-test-output.txt',
+  loreinReflect:           '../../data/evidence/lorein-cli-reflect.txt',
+  loreinReflect2:          '../../data/evidence/lorein-cli-reflect-2.txt',
+  loreinIdentity:          '../../data/evidence/lorein-cli-identity.txt',
+  loreinVerify:            '../../data/evidence/lorein-cli-verify.txt',
+  loreinReplay:            '../../data/evidence/lorein-cli-replay.txt',
+  loreinJournal:           '../../data/evidence/lorein-sample-journal.jsonl',
+};
+
+/**
+ * Load all text evidence at module init. Failures are non-fatal — the panel
+ * just shows "(failed to load evidence file)" instead of crashing the page.
+ */
+async function loadTextEvidence() {
+  const entries = Object.entries(TEXT_FILES);
+  await Promise.all(entries.map(async ([key, relPath]) => {
+    try {
+      const res = await fetch(relPath);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      // Assign by name — these are module-level let bindings.
+      if (key === 'ghostcodeTestOutput') ghostcodeTestOutput = text;
+      else if (key === 'vitalisCoreTestOutput') vitalisCoreTestOutput = text;
+      else if (key === 'vitalisCoreInfo') vitalisCoreInfo = text;
+      else if (key === 'vitalisCorePrompt') vitalisCorePrompt = text;
+      else if (key === 'vitalisDevcoreTestOutput') vitalisDevcoreTestOutput = text;
+      else if (key === 'vitalisDevcoreInfo') vitalisDevcoreInfo = text;
+      else if (key === 'vitalisDevcoreAsk') vitalisDevcoreAsk = text;
+      else if (key === 'vitalisDevcoreThink') vitalisDevcoreThink = text;
+      else if (key === 'vitalisDevcoreReplay') vitalisDevcoreReplay = text;
+      else if (key === 'loreinTestOutput') loreinTestOutput = text;
+      else if (key === 'loreinReflect') loreinReflect = text;
+      else if (key === 'loreinReflect2') loreinReflect2 = text;
+      else if (key === 'loreinIdentity') loreinIdentity = text;
+      else if (key === 'loreinVerify') loreinVerify = text;
+      else if (key === 'loreinReplay') loreinReplay = text;
+      else if (key === 'loreinJournal') loreinJournal = text;
+    } catch (e) {
+      // Leave the variable as empty string; the panel will show "(load failed)".
+      console.warn(`[proof] failed to load ${relPath}:`, e.message);
+    }
+  }));
+}
 
 const PROOFS = [
   {
@@ -237,18 +296,24 @@ const PROOFS = [
   },
 ];
 
-export function mountProofGallery(root) {
+export async function mountProofGallery(root) {
   if (!root) return;
+  // Show a placeholder while text evidence loads.
   root.innerHTML = `
     <div class="proof-gallery" data-reveal>
       <div class="proof-gallery-header">
         <h2 class="proof-gallery-title">Proof · what we actually built</h2>
         <p class="proof-gallery-lede">Every artifact below is regenerated by running the verification commands in the repo. Not screenshots — the actual files.</p>
       </div>
-      <div class="proof-gallery-target"></div>
+      <div class="proof-gallery-target" id="proof-gallery-target">
+        <p class="proof-loading">Loading evidence files…</p>
+      </div>
     </div>
   `;
   const target = root.querySelector('.proof-gallery-target');
+  await loadTextEvidence();
+  // Clear loading state.
+  target.innerHTML = '';
   for (const proof of PROOFS) {
     const block = document.createElement('div');
     block.className = `proof-block proof-${proof.color}`;
@@ -257,11 +322,14 @@ export function mountProofGallery(root) {
     for (const section of proof.sections) {
       const slot = document.createElement('div');
       block.appendChild(slot);
+      // If a terminal panel has no text yet, show a load-failed notice.
+      const lines = (section.lines || '').trim()
+        || (section.kind === 'terminal' ? '(evidence file not loaded)' : '');
       mountProofPanel(slot, {
         mode: section.kind,
         title: section.title,
         items: section.items,
-        lines: section.lines,
+        lines,
         json: section.json,
         accent: proof.color,
         liveBadge: true,
@@ -292,6 +360,13 @@ const STYLES = `
   margin: 0 auto;
 }
 .proof-block { margin: var(--space-8) 0; }
+.proof-loading {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  padding: var(--space-8) 0;
+}
 .proof-block-title {
   font-family: var(--font-mono);
   font-size: var(--text-lg);
