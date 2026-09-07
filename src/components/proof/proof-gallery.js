@@ -5,25 +5,24 @@
  *
  * Used at the bottom of section pages to prove "this is real, not a mock".
  *
- * Text files (.txt, .jsonl) are loaded at runtime via fetch() because the
- * static site can't use Vite's `?raw` import (no bundler at deploy time).
+ * CRITICAL: GitHub Pages serves .json files with `Content-Type: application/json`,
+ * which browsers REFUSE to import as ES modules (strict MIME checking).
+ * We load every evidence file at runtime via fetch() instead. This works
+ * on any static host with no MIME-type configuration.
  */
 
 import { mountProofPanel } from './proof-panel.js';
-import ghostcodeGhost from '../../data/evidence/ghostcode-ghost.json';
-import ghostcodeThrow from '../../data/evidence/ghostcode-throw-frame.json';
-import ghostcodeStats from '../../data/evidence/ghostcode-stats.json';
-import ghostcodeSessionStart from '../../data/evidence/ghostcode-session-start.json';
-import ghostcodeInboundReq from '../../data/evidence/ghostcode-inbound-request.json';
-import ghostcodeInboundRes from '../../data/evidence/ghostcode-inbound-response.json';
 
-import vitalisCoreSummary from '../../data/evidence/vitalis-core-summary.json';
-
-import vitalisDevcoreSummary from '../../data/evidence/vitalis-devcore-summary.json';
-
-import loreinSummary from '../../data/evidence/lorein-summary.json';
-
-// All text-content placeholders; populated at runtime via fetch().
+// All evidence placeholders. Populated at runtime via fetch().
+let ghostcodeGhost = null;
+let ghostcodeThrow = null;
+let ghostcodeStats = null;
+let ghostcodeSessionStart = null;
+let ghostcodeInboundReq = null;
+let ghostcodeInboundRes = null;
+let vitalisCoreSummary = null;
+let vitalisDevcoreSummary = null;
+let loreinSummary = null;
 let ghostcodeTestOutput = '';
 let vitalisCoreTestOutput = '';
 let vitalisCoreInfo = '';
@@ -40,6 +39,18 @@ let loreinIdentity = '';
 let loreinVerify = '';
 let loreinReplay = '';
 let loreinJournal = '';
+
+const JSON_FILES = {
+  ghostcodeGhost:         '../../data/evidence/ghostcode-ghost.json',
+  ghostcodeThrow:         '../../data/evidence/ghostcode-throw-frame.json',
+  ghostcodeStats:         '../../data/evidence/ghostcode-stats.json',
+  ghostcodeSessionStart:  '../../data/evidence/ghostcode-session-start.json',
+  ghostcodeInboundReq:    '../../data/evidence/ghostcode-inbound-request.json',
+  ghostcodeInboundRes:    '../../data/evidence/ghostcode-inbound-response.json',
+  vitalisCoreSummary:     '../../data/evidence/vitalis-core-summary.json',
+  vitalisDevcoreSummary:  '../../data/evidence/vitalis-devcore-summary.json',
+  loreinSummary:          '../../data/evidence/lorein-summary.json',
+};
 
 const TEXT_FILES = {
   ghostcodeTestOutput:     '../../data/evidence/ghostcode-test-output.txt',
@@ -61,17 +72,36 @@ const TEXT_FILES = {
 };
 
 /**
- * Load all text evidence at module init. Failures are non-fatal — the panel
+ * Load all evidence at module init. Failures are non-fatal — the panel
  * just shows "(failed to load evidence file)" instead of crashing the page.
  */
-async function loadTextEvidence() {
-  const entries = Object.entries(TEXT_FILES);
-  await Promise.all(entries.map(async ([key, relPath]) => {
+async function loadEvidence() {
+  const jsonEntries = Object.entries(JSON_FILES);
+  await Promise.all(jsonEntries.map(async ([key, relPath]) => {
+    try {
+      const res = await fetch(relPath);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (key === 'ghostcodeGhost') ghostcodeGhost = data;
+      else if (key === 'ghostcodeThrow') ghostcodeThrow = data;
+      else if (key === 'ghostcodeStats') ghostcodeStats = data;
+      else if (key === 'ghostcodeSessionStart') ghostcodeSessionStart = data;
+      else if (key === 'ghostcodeInboundReq') ghostcodeInboundReq = data;
+      else if (key === 'ghostcodeInboundRes') ghostcodeInboundRes = data;
+      else if (key === 'vitalisCoreSummary') vitalisCoreSummary = data;
+      else if (key === 'vitalisDevcoreSummary') vitalisDevcoreSummary = data;
+      else if (key === 'loreinSummary') loreinSummary = data;
+    } catch (e) {
+      console.warn(`[proof] failed to load JSON ${relPath}:`, e.message);
+    }
+  }));
+
+  const textEntries = Object.entries(TEXT_FILES);
+  await Promise.all(textEntries.map(async ([key, relPath]) => {
     try {
       const res = await fetch(relPath);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const text = await res.text();
-      // Assign by name — these are module-level let bindings.
       if (key === 'ghostcodeTestOutput') ghostcodeTestOutput = text;
       else if (key === 'vitalisCoreTestOutput') vitalisCoreTestOutput = text;
       else if (key === 'vitalisCoreInfo') vitalisCoreInfo = text;
@@ -89,8 +119,7 @@ async function loadTextEvidence() {
       else if (key === 'loreinReplay') loreinReplay = text;
       else if (key === 'loreinJournal') loreinJournal = text;
     } catch (e) {
-      // Leave the variable as empty string; the panel will show "(load failed)".
-      console.warn(`[proof] failed to load ${relPath}:`, e.message);
+      console.warn(`[proof] failed to load text ${relPath}:`, e.message);
     }
   }));
 }
@@ -311,7 +340,7 @@ export async function mountProofGallery(root) {
     </div>
   `;
   const target = root.querySelector('.proof-gallery-target');
-  await loadTextEvidence();
+  await loadEvidence();
   // Clear loading state.
   target.innerHTML = '';
   for (const proof of PROOFS) {
