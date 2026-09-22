@@ -32,6 +32,21 @@ const PRINCIPLES = [
   },
 ];
 
+const ECOSYSTEM = [
+  {
+    title: 'Trust passports',
+    text: 'Capability Center work is contract-bound: source, version, permissions, network access, dependencies, self-test, conformance, provenance, and health should be visible. Missing evidence stays unrecorded.'
+  },
+  {
+    title: 'Install capabilities, not trust',
+    text: 'A declared capability is not automatically trusted or verified. Authority, Helix, and Veritas remain the boundaries that a capability must respect.'
+  },
+  {
+    title: 'GitHub-native registry',
+    text: 'The community path is build → verify → pull request → CI → maintainer review → catalog. It is not a commercial marketplace and Discord is not the technical source of truth.'
+  },
+];
+
 export function mountCovert(root) {
   if (!root) return;
   root.innerHTML = `
@@ -78,6 +93,24 @@ export function mountCovert(root) {
         </ol>
       </div>
 
+      <section class="covert-ecosystem glass" data-reveal aria-labelledby="covert-ecosystem-title">
+        <div class="covert-loop-heading">
+          <div class="section-eyebrow">// capability center</div>
+          <h3 id="covert-ecosystem-title">Install capabilities, not trust.</h3>
+          <p>The ecosystem surface is being built around visible permissions and reproducible evidence. The public site does not claim a complete registry or certified capability passports before those contracts pass their own examination.</p>
+        </div>
+        <div class="covert-ecosystem-grid">
+          ${ECOSYSTEM.map((item, index) => `
+            <article class="covert-ecosystem-card">
+              <div class="covert-card-num">0${index + 1}</div>
+              <h4>${item.title}</h4>
+              <p>${item.text}</p>
+            </article>
+          `).join('')}
+        </div>
+        <div class="covert-ecosystem-status" role="status">ECOSYSTEM STATUS · CONTRACT-BOUND / RELEASE CERTIFICATION PENDING</div>
+      </section>
+
       <div class="covert-cta" data-reveal>
         <a class="btn btn-primary" href="https://github.com/AnonymousNomad/aide-sovereign-workbench" target="_blank" rel="noopener noreferrer">View Covert on GitHub <span aria-hidden="true">→</span></a>
         <a class="btn btn-secondary" href="#public-resident">Public read-only guide</a>
@@ -109,6 +142,12 @@ const STYLES = `
 .covert-card h3 { color: var(--text-primary); font-size: var(--text-xl); margin-bottom: var(--space-3); }
 .covert-card p { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
 .covert-loop { padding: var(--space-8); }
+.covert-ecosystem { padding: var(--space-8); margin-top: var(--space-8); }
+.covert-ecosystem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.covert-ecosystem-card { padding: var(--space-5); border: 1px solid var(--black-border-bright); border-radius: var(--radius-xl); background: var(--black-elevated); }
+.covert-ecosystem-card h4 { color: var(--text-primary); font-size: var(--text-lg); margin-bottom: var(--space-2); }
+.covert-ecosystem-card p { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+.covert-ecosystem-status { margin-top: var(--space-5); color: var(--accent-warning); font: var(--weight-bold) var(--text-xs) var(--font-mono); letter-spacing: var(--tracking-wide); }
 .covert-loop-heading { max-width: 62ch; margin-bottom: var(--space-8); }
 .covert-loop-heading h3 { font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); margin-bottom: var(--space-3); }
 .covert-loop-heading p { color: var(--text-secondary); line-height: var(--leading-relaxed); }
@@ -118,8 +157,8 @@ const STYLES = `
 .covert-flow-step strong { color: var(--text-primary); }
 .covert-flow-step span:last-child { color: var(--text-tertiary); font-size: var(--text-xs); line-height: var(--leading-relaxed); }
 .covert-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8); }
-@media (max-width: 900px) { .covert-principles { grid-template-columns: 1fr; } .covert-flow { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 600px) { .covert-status { padding: var(--space-4); } .covert-loop { padding: var(--space-5); } .covert-flow { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .covert-principles { grid-template-columns: 1fr; } .covert-flow { grid-template-columns: repeat(3, 1fr); } .covert-ecosystem-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .covert-status { padding: var(--space-4); } .covert-loop, .covert-ecosystem { padding: var(--space-5); } .covert-flow { grid-template-columns: repeat(2, 1fr); } }
 `;
 
 if (!document.getElementById('covert-styles')) {
