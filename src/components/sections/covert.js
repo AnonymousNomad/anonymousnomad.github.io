@@ -9,10 +9,12 @@
 const FLOW = [
   ['01', 'Operator', 'states the objective'],
   ['02', 'Resident', 'keeps the project legible'],
-  ['03', 'Workflow', 'makes the next stage explicit'],
-  ['04', 'Authority', 'bounds mutations'],
-  ['05', 'Harness', 'performs the governed work'],
-  ['06', 'Veritas', 'checks machine evidence'],
+  ['03', 'Context / Helix / Skills', 'supplies bounded working truth'],
+  ['04', 'Workflow', 'makes the next stage explicit'],
+  ['05', 'Replaceable workers', 'bring temporary intelligence'],
+  ['06', 'Authority', 'bounds mutations'],
+  ['07', 'Harness', 'performs the governed work'],
+  ['08', 'Veritas + evidence', 'checks what actually happened'],
 ];
 
 const PRINCIPLES = [
@@ -21,8 +23,8 @@ const PRINCIPLES = [
     text: 'The worker is replaceable. Project identity, workflow state, constraints, evidence, and next step belong to Covert.',
   },
   {
-    title: 'Local by default',
-    text: 'Covert is being built around local models and local tools. External providers are optional surfaces, not the public product baseline.',
+    title: 'Replaceable intelligence',
+    text: 'Bring the worker that fits the task. Covert keeps model identity separate from project identity, workflow state, and evidence.',
   },
   {
     title: 'Proof over confidence',
@@ -38,7 +40,7 @@ export function mountCovert(root) {
       <header class="section-header" data-reveal>
         <div class="section-eyebrow">// covert coder</div>
         <h2 class="section-title">One workbench. One project truth.</h2>
-        <p class="section-lede">Covert is a local-first developer workbench built to keep context, authority, execution, and evidence connected while workers change.</p>
+        <p class="section-lede">Covert is a sovereign AI engineering workbench built to keep project truth, authority, execution, and evidence connected while workers change.</p>
       </header>
 
       <div class="covert-status glass" data-reveal role="status">
@@ -63,7 +65,7 @@ export function mountCovert(root) {
         <div class="covert-loop-heading">
           <div class="section-eyebrow">// system boundary</div>
           <h3>Many workers. One governed loop.</h3>
-          <p>Remote surfaces may observe or request work; they do not create a second Resident, authority system, or project database.</p>
+          <p>Bring whatever intelligence fits the task. Remote surfaces may observe or request work; they do not create a second Resident, authority system, or project database.</p>
         </div>
         <ol class="covert-flow" aria-label="Covert governed workflow">
           ${FLOW.map(([number, name, detail]) => `
@@ -110,7 +112,7 @@ const STYLES = `
 .covert-loop-heading { max-width: 62ch; margin-bottom: var(--space-8); }
 .covert-loop-heading h3 { font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); margin-bottom: var(--space-3); }
 .covert-loop-heading p { color: var(--text-secondary); line-height: var(--leading-relaxed); }
-.covert-flow { list-style: none; display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-2); margin: 0; padding: 0; }
+.covert-flow { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2); margin: 0; padding: 0; }
 .covert-flow-step { display: flex; flex-direction: column; gap: var(--space-2); min-height: 120px; padding: var(--space-4); border: 1px solid var(--black-border-bright); border-radius: var(--radius-xl); background: var(--black-elevated); }
 .covert-flow-num { color: var(--blue-neon-bright); font: var(--weight-bold) var(--text-xs) var(--font-mono); }
 .covert-flow-step strong { color: var(--text-primary); }
