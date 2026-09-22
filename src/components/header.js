@@ -4,6 +4,8 @@
 
 const NAV = [
   { id: 'aide', label: 'AIDE' },
+  { id: 'covert', label: 'Covert' },
+  { id: 'public-resident', label: 'Ask Covert' },
   { id: 'ghostcode', label: 'GhostCode' },
   { id: 'vitalis', label: 'Vitalis' },
   { id: 'cyber', label: 'Cyber' },

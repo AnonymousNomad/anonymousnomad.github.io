@@ -1,6 +1,6 @@
 # Neuro_Nomad Portfolio
 
-> Sovereign systems. Local-first. Forever offline.
+> Covert Coder and sovereign systems. Local-first. Evidence-led.
 
 Personal portfolio site for Neuro_Nomad (GitHub: [@AnonymousNomad](https://github.com/AnonymousNomad)) — licensed electrician turned self-taught solo developer. Showcases 6 open-source projects: AIDE Sovereign Workbench, GhostCode, Vitalis Core, Vitalis Devcore, Cyber SOP Harness, and LOREIN.
 
@@ -17,12 +17,14 @@ Personal portfolio site for Neuro_Nomad (GitHub: [@AnonymousNomad](https://githu
 
 1. **Hero** — AIDE flagship, 9-step closed loop, live stats
 2. **About** — electrician → AI architect, "How I work" pipeline, 3 principles
-3. **AIDE** — flagship detail: 3 model packs, the 9-step loop expanded
-4. **GhostCode** — cyan island, the user-journey terminal, 5-step walkthrough
-5. **Proof** — 25 evidence files, 4 finished repos, 54 tests passing
-6. **Vitalis** — both engines (Core + Devcore), CLI examples, status cards
-7. **Cyber SOP Harness** — governance loop, 6 key types
-8. **LOREIN** — dual-process cognition, tamper-evident journal, CLI example
+3. **AIDE** — flagship detail, truthful starter-model states, intended closed loop
+4. **Covert Coder** — public product boundary, project truth, authority, Harness, and Veritas
+5. **Public Resident guide** — static, read-only documentation surface; no workstation access
+6. **GhostCode** — cyan island, the user-journey terminal, 5-step walkthrough
+7. **Proof** — 25 evidence files, 4 finished repos, 54 tests passing
+8. **Vitalis** — both engines (Core + Devcore), CLI examples, status cards
+9. **Cyber SOP Harness** — governance loop, 6 key types
+10. **LOREIN** — dual-process cognition, tamper-evident journal, CLI example
 
 The **Proof** section between GhostCode and Vitalis is the new honesty layer. It shows real artifacts (test output, CLI transcripts, sample journal, captured ghost) for the 4 finished reference implementations. No screenshots — the actual files.
 
@@ -95,6 +97,13 @@ All project content (names, taglines, descriptions, features, links, test counts
 The site auto-deploys to `https://anonymousnomad.github.io/` on every push to `main` via the workflow in `.github/workflows/pages.yml`. No build step required.
 
 See [`DEPLOY.md`](./DEPLOY.md) for the exact commands.
+
+## Public truth note
+
+The site distinguishes project descriptions from release certification. Covert's
+independent outside-user release examination is still in progress; a catalog
+entry, source implementation, or development-lane result is not presented here
+as proof that the current public release is ready.
 
 ## What's been verified (2026-09-07)
 

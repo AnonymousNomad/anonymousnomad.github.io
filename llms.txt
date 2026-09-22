@@ -1,6 +1,6 @@
 # Neuro_Nomad Portfolio
 
-> Sovereign systems. Local-first. Forever offline.
+> Covert Coder and sovereign systems. Local-first. Evidence-led.
 
 Personal portfolio of Neuro_Nomad (GitHub: @AnonymousNomad) — licensed electrician turned self-taught solo developer. Builds offline-first systems where failure is expensive: AI runtimes, training pipelines, low-level OS integration, and security controls that must prove what they did.
 
@@ -25,11 +25,13 @@ Personal portfolio of Neuro_Nomad (GitHub: @AnonymousNomad) — licensed electri
 
 1. **Hero** — AIDE flagship, 9-step closed loop, matrix-green accent
 2. **About** — Electrician → AI architect, 3 evidence areas, "How I work" pipeline
-3. **AIDE Sovereign Workbench** — flagship, 3 model packs, closed-loop expansion
-4. **GhostCode** — concept demo, cyan island, user journey terminal
-5. **Vitalis (Core + Devcore)** — cognitive engines, Tri-Head architecture, 8 + 6 chapters
-6. **Cyber SOP Harness** — security governance, 5-step loop, key types, test coverage
-7. **LOREIN** — persistent intelligence, 5-year timeline, 4 components
+3. **AIDE Sovereign Workbench** — flagship, release-aware model states, intended closed loop
+4. **Covert Coder** — public product boundary and evidence-led local-first workbench direction
+5. **Public Resident guide** — static read-only guide; no workstation or execution access
+6. **GhostCode** — concept demo, cyan island, user journey terminal
+7. **Vitalis (Core + Devcore)** — cognitive engines, Tri-Head architecture, 8 + 6 chapters
+8. **Cyber SOP Harness** — security governance, 5-step loop, key types, test coverage
+9. **LOREIN** — persistent intelligence, 5-year timeline, 4 components
 
 ## Repos showcased
 
@@ -42,7 +44,9 @@ Personal portfolio of Neuro_Nomad (GitHub: @AnonymousNomad) — licensed electri
 | cyber-sop-harness | Cyber SOP Harness | security | C# | MIT |
 | lorein-sovereign-entity | LOREIN — Sovereign Entity | architecture | Docs + PDFs | Apache-2.0 |
 
-All repos are open source. All projects are local-first. All demos are honest about their state (active, development-preview, concept-demo, research).
+All repos are open source. Project entries are labeled by their current public
+status. Covert's full outside-user release certification is not yet claimed by
+this site.
 
 ## How to interact with this site
 

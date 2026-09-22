@@ -8,6 +8,8 @@ import { mountHeader } from './components/header.js';
 import { mountHero } from './components/sections/hero.js';
 import { mountAbout } from './components/sections/about.js';
 import { mountAide } from './components/sections/aide.js';
+import { mountCovert } from './components/sections/covert.js';
+import { mountPublicResident } from './components/sections/public-resident.js';
 import { mountGhostcode } from './components/sections/ghostcode.js';
 import { mountProofGallery } from './components/proof/proof-gallery.js';
 import { mountVitalis } from './components/sections/vitalis.js';
@@ -33,6 +35,8 @@ function mount() {
   safeMount('hero',      mountHero,         document.getElementById('hero'));
   safeMount('about',     mountAbout,        document.getElementById('about'));
   safeMount('aide',      mountAide,         document.getElementById('aide'));
+  safeMount('covert',    mountCovert,       document.getElementById('covert'));
+  safeMount('public-resident', mountPublicResident, document.getElementById('public-resident'));
   safeMount('ghostcode', mountGhostcode,    document.getElementById('ghostcode'));
   safeMount('proof',     mountProofGallery, document.getElementById('proof'));
   safeMount('vitalis',   mountVitalis,      document.getElementById('vitalis'));

@@ -57,9 +57,9 @@ const LOOP_DETAIL = [
 ];
 
 const MODEL_PACKS = [
-  { name: 'SmolLM2 360M', role: 'chat · planning', size: '360M' },
-  { name: 'Qwen2.5-Coder 0.5B', role: 'autocomplete', size: '0.5B' },
-  { name: 'Qwen2.5-Coder 1.5B', role: 'primary coding', size: '1.5B' },
+  { name: 'SmolLM2 360M', role: 'local lifecycle evidence', size: '360M' },
+  { name: 'Qwen2.5-Coder 0.5B', role: 'cataloged candidate', size: '0.5B' },
+  { name: 'Llama 3.2 1B', role: 'cataloged candidate', size: '1B' },
 ];
 
 export function mountAide(root) {
@@ -79,8 +79,8 @@ export function mountAide(root) {
 
       <div class="aide-quickstart glass" data-reveal>
         <div class="qs-header">
-          <span class="qs-label">Quickstart</span>
-          <span class="qs-time">~ 60 seconds</span>
+          <span class="qs-label">Release-aware quickstart</span>
+          <span class="qs-time">candidate-dependent</span>
         </div>
         <div class="terminal qs-terminal">
           <div class="terminal-header">
@@ -93,17 +93,17 @@ export function mountAide(root) {
           </div>
           <pre class="terminal-body"><span class="terminal-muted">$</span> <span class="terminal-prompt">npm install</span>
 <span class="terminal-muted">$</span> <span class="terminal-prompt">npm run doctor</span>
-<span class="terminal-success">✔ llama-server found at ./bin/llama-server</span>
-<span class="terminal-success">✔ Qwen2.5-Coder 1.5B GGUF verified</span>
+<span class="terminal-info">  installation checks are separate from model readiness</span>
 <span class="terminal-muted">$</span> <span class="terminal-prompt">npm start</span>
-<span class="terminal-info">  VITE v5.2.0  ready in 412 ms</span>
-<span class="terminal-info">  ➜  Local:   http://127.0.0.1:4173/</span>
-<span class="terminal-success">✔ AIDE Sovereign Workbench is online</span><span class="cursor"></span></pre>
+<span class="terminal-info">  local services start according to the candidate contract</span>
+<span class="terminal-warning">! model inventory and READY state must be verified in-product</span>
+<span class="terminal-warning">! public release certification remains in progress</span><span class="cursor"></span></pre>
         </div>
       </div>
 
       <div class="aide-models" data-reveal>
-        <h3 class="block-title">3 model packs. Local. Yours.</h3>
+        <h3 class="block-title">Starter models, with truthful status.</h3>
+        <p class="block-lede">A catalog entry is not the same as a downloaded, registered, startable, or READY runtime. The release gate keeps those states separate.</p>
         <div class="model-grid">
           ${MODEL_PACKS.map(
             (m) => `
@@ -122,8 +122,8 @@ export function mountAide(root) {
       </div>
 
       <div class="aide-loop" data-reveal>
-        <h3 class="block-title">The closed loop, expanded</h3>
-        <p class="block-lede">Every change goes through these nine stages. Evidence at every gate. Nothing ships untraced.</p>
+        <h3 class="block-title">The intended closed loop</h3>
+        <p class="block-lede">These are the product stages and their evidence contracts. The current release candidate must prove each transition before it is presented as shipped.</p>
         <ol class="loop-grid">
           ${LOOP_DETAIL.map(
             (s) => `

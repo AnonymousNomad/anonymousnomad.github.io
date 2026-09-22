@@ -19,6 +19,8 @@ export function mountFooter(root) {
           <h4 class="footer-col-title">Projects</h4>
           <ul class="footer-list">
             <li><a href="#aide">AIDE Workbench</a></li>
+            <li><a href="#covert">Covert Coder</a></li>
+            <li><a href="#public-resident">Public guide</a></li>
             <li><a href="#ghostcode">GhostCode</a></li>
             <li><a href="#vitalis">Vitalis Engines</a></li>
             <li><a href="#cyber">Cyber SOP Harness</a></li>

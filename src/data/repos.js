@@ -26,9 +26,9 @@ export const repos = [
   {
     id: 'aide-sovereign-workbench',
     name: 'AIDE Sovereign Workbench',
-    tagline: 'An offline IDE that proves what it did.',
+    tagline: 'A local-first workbench built to prove what it did.',
     description:
-      'Offline-first, model-agnostic developer workbench with verified local operators, Git workflows, plugins, Tutor Mode, and reproducible audit artifacts. Runs without internet. 265 architecture tests, 17 Playwright E2E tests.',
+      'Local-first, model-agnostic developer workbench with verified local operators, Git workflows, plugins, Tutor Mode, and reproducible audit artifacts. The independent outside-user release certification remains in progress; the repository is the source of current evidence.',
     role: 'flagship',
     accent: '--accent-aide',
     repoUrl: 'https://github.com/AnonymousNomad/aide-sovereign-workbench',
@@ -36,7 +36,7 @@ export const repos = [
     stars: 20,
     language: 'TypeScript',
     license: 'Apache-2.0',
-    status: 'active',
+    status: 'development-preview',
     tags: ['offline-ide', 'model-agnostic', 'veritas', 'plugins', 'lsp', 'dap'],
     features: [
       {
@@ -47,12 +47,12 @@ export const repos = [
       {
         title: 'Closed-loop development',
         description:
-          'guard → retrieve → plan → propose → verify → revise → test → review → learn. The whole loop in one harness.',
+          'The intended loop is guard → retrieve → plan → propose → verify → revise → test → review → learn. Candidate certification determines which stages are release-proven.',
       },
       {
         title: 'Offline-first',
         description:
-          'No cloud. No telemetry. 3 model packs (SmolLM2, Qwen2.5-Coder 0.5B/1.5B) bundle locally.',
+          'The product is designed around local models and local tools. Full offline end-to-end readiness remains an explicit release gate.',
       },
       {
         title: 'Reproducible capsules',
@@ -63,8 +63,8 @@ export const repos = [
     demoCopy: {
       problem: 'Cloud IDEs that lock you in. AI assistants that lie. Tests that pass once and never again.',
       solution:
-        'AIDE runs offline, proves every operation with evidence, and ships sealed capsules you can replay anywhere.',
-      status: 'Active development. 265 tests, 17 E2E, green CI on every push.',
+        'AIDE is being built to run locally, distinguish worker claims from evidence, and preserve reproducible project state.',
+      status: 'Development preview. Independent release certification is in progress.',
     },
   },
 
