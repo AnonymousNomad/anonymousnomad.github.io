@@ -1,66 +1,108 @@
-# Neuro_Nomad Portfolio
+# Nomadic Labs
 
-> Sovereign systems. Local-first. Forever offline.
+> Power. Water. Signal. Code.
 
-Personal portfolio of Neuro_Nomad (GitHub: @AnonymousNomad) — licensed electrician turned self-taught solo developer. Builds offline-first systems where failure is expensive: AI runtimes, training pipelines, low-level OS integration, and security controls that must prove what they did.
+Nomadic Labs is the umbrella home for independent software, media, AI systems, engineering work, research, client work, and release evidence built by AnonymousNomad.
 
-## Site
+Canonical site: https://nomadic-labs.dev/
 
-- **URL:** https://anonymousnomad.github.io/
-- **Stack:** Plain HTML5 + CSS custom properties + native ES modules. No build step. No framework. No Tailwind. No web fonts. No CDN. No analytics. No cookies. No third-party scripts.
-- **License:** Apache-2.0
-- **Source:** https://github.com/AnonymousNomad/anonymousnomad.github.io
+## Builder
 
-## Design tokens
+AnonymousNomad is an independent developer with an electrical-work background who builds software, AI systems, media products, and practical technical projects.
 
-- **Matrix green** `#00FF41` — "system is running" semantic
-- **Neon purple** `#A855F7` — section headers, primary accents
-- **Neon blue** `#3B82F6` — links, secondary
-- **Cyan-400** `#22D3EE` — GhostCode section only
-- **Deep black** `#050507` — all backgrounds
-- **Off-white** `#E5E7EB` — body text
-- **System font stack:** `-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif`
+Public themes:
+- hands-on engineering
+- verify-first development
+- local-first systems where appropriate
+- off-grid independence
+- outdoors and frontier influence
+- gaming and science-fiction influence
+- evidence-backed claims rather than marketing inflation
 
-## Sections (top to bottom)
+Private workstation data, credentials, personal records, and private model memory are not public website data.
 
-1. **Hero** — AIDE flagship, 9-step closed loop, matrix-green accent
-2. **About** — Electrician → AI architect, 3 evidence areas, "How I work" pipeline
-3. **AIDE Sovereign Workbench** — flagship, 3 model packs, closed-loop expansion
-4. **GhostCode** — concept demo, cyan island, user journey terminal
-5. **Vitalis (Core + Devcore)** — cognitive engines, Tri-Head architecture, 8 + 6 chapters
-6. **Cyber SOP Harness** — security governance, 5-step loop, key types, test coverage
-7. **LOREIN** — persistent intelligence, 5-year timeline, 4 components
+## Project worlds
 
-## Repos showcased
+### Nomadic TV
 
-| ID | Name | Role | Language | License |
-|----|------|------|----------|---------|
-| aide-sovereign-workbench | AIDE Sovereign Workbench | flagship | TypeScript | Apache-2.0 |
-| ghostcode | GhostCode | concept-demo | TypeScript | Apache-2.0 |
-| vitalis-core | Vitalis Core (Neuro-Synth Engine) | cognitive-engine | Python | MIT |
-| vitalis-devcore | Vitalis Devcore | cognitive-engine | Python | MIT |
-| cyber-sop-harness | Cyber SOP Harness | security | C# | MIT |
-| lorein-sovereign-entity | LOREIN — Sovereign Entity | architecture | Docs + PDFs | Apache-2.0 |
+Nomadic TV is an active streaming-platform project centered on live channels, guide-driven discovery, movies and shows, household media, and a television experience designed to feel like television rather than endless thumbnail scrolling.
 
-All repos are open source. All projects are local-first. All demos are honest about their state (active, development-preview, concept-demo, research).
+Current public status: active development and content/provider outreach.
 
-## How to interact with this site
+The Nomadic TV visual identity will remain distinct when migrated under Nomadic Labs.
 
-- Scroll through sections (smooth scroll, sticky header with nav)
-- Hover any card to see glow + lift effect
-- Click the "View on GitHub" CTA on any project to open the source repo
-- For AIDE: there is no live demo on the site; the README in the repo has the quickstart
-- For GhostCode: a concept demo; the repo is the source of truth
+### Nexus / ToolNeuron
 
-## For AI agents
+Nexus is the planned community and catalog surface for models, skills, plugins, packages, developer tools, and community publishing.
 
-This site was built to be readable by humans AND by AI agents. The structure is semantic. The content is honest. The data layer (`src/data/repos.js`) is the single source of truth for project metadata. The skills I created to design this site are in the portfolio-research repo (TBD location).
+The existing Nexus visual direction is preserved. Production migration is intended to support real accounts, publishers, submissions, moderation, package versions and hashes, downloads, APIs, and administration.
 
-## Contact
+Current public status: migration and product development.
 
-- GitHub: https://github.com/AnonymousNomad
-- Sponsors: https://github.com/sponsors/AnonymousNomad
+### Covert
+
+Covert is a local-first governed AI developer platform focused on resident assistance, model/runtime control, context control, workflow orchestration, execution authority, verification, and evidence-backed mission results.
+
+Current public status: active engineering.
+
+Do not infer that unfinished Covert capabilities are released merely because they are documented or planned.
+
+### Workshop
+
+Nomadic Labs also covers research, prototypes, open-source contributions, release evidence, and delivered client work.
+
+A recent client example is the Cranes Mill Baptist Church website project.
+
+## Site architecture
+
+Nomadic Labs is the umbrella property. Product sites remain distinct worlds.
+
+Planned public surfaces include:
+- nomadic-labs.dev — main hub
+- tv.nomadic-labs.dev — Nomadic TV
+- nexus.nomadic-labs.dev — Nexus
+- covert.nomadic-labs.dev — Covert
+- releases.nomadic-labs.dev — release/artifact surface
+
+Specific product surfaces should only be described as live after they are actually deployed and verified.
+
+## Engineering doctrine
+
+Nomadic Labs follows a verify-first development pattern:
+
+OBSERVE -> DIAGNOSE -> REPAIR -> RERUN -> VERIFY -> CONTINUE
+
+Public shorthand:
+
+evidence > confidence
+
+## Website guide
+
+The site includes an embedded public support guide.
+
+The guide:
+- answers questions about Nomadic Labs, the builder, and public projects
+- is grounded in curated public information
+- must distinguish active work from completed releases
+- must say when information is unavailable
+- must not expose credentials, private files, private memories, or workstation data
+
+Initial inference target: Cloudflare Workers AI.
+
+## Visual direction
+
+The final Nomadic Labs design is intentionally not a generic SaaS portfolio.
+
+The design direction is a restrained, professional off-grid frontier environment using:
+- dark northern weather and rain
+- worn electrical infrastructure
+- power lines and subtle static discharge
+- water and signal systems
+- restrained holographic instrumentation
+- original science-fiction influence
+- cinematic atmosphere without copying existing franchises
+
+Nomadic TV and Nexus retain their own visual identities.
 
 ---
-
-Last updated: 2026-09-07
+Last updated: 2026-10-23
