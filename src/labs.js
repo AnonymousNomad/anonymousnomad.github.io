@@ -45,11 +45,13 @@ if (list) {
     const title = document.createElement('h3');
     const link = document.createElement('a');
     link.href = project.route;
-    link.textContent = project.name;
+    const titleText = document.createElement('span');
+    titleText.textContent = project.name;
     const arrow = document.createElement('span');
+    arrow.className = 'project-arrow';
     arrow.setAttribute('aria-hidden', 'true');
     arrow.textContent = '↗';
-    link.append(' ', arrow);
+    link.append(titleText, arrow);
     title.appendChild(link);
 
     const summary = document.createElement('p');
