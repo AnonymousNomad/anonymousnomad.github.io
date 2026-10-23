@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nomadic-labs.dev/</loc></url>
+  <url><loc>https://nomadic-labs.dev/about/</loc></url>
+  <url><loc>https://nomadic-labs.dev/status/</loc></url>
+  <url><loc>https://nomadic-labs.dev/privacy/</loc></url>
   <url><loc>https://nomadic-labs.dev/tv/</loc></url>
   <url><loc>https://nomadic-labs.dev/tv/watch/</loc></url>
   <url><loc>https://nomadic-labs.dev/tv/guide/</loc></url>
