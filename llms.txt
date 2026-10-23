@@ -15,60 +15,82 @@ Public themes:
 - verify-first development
 - local-first systems where appropriate
 - off-grid independence
-- outdoors and frontier influence
-- gaming and science-fiction influence
-- evidence-backed claims rather than marketing inflation
+- outdoors/frontier influence
+- gaming and original science-fiction influence
+- evidence-backed claims instead of marketing inflation
 
 Private workstation data, credentials, personal records, and private model memory are not public website data.
 
 ## Project worlds
 
-### Nomadic TV
+### Nomadic TV — /tv/
 
-Nomadic TV is an active streaming-platform project centered on live channels, guide-driven discovery, movies and shows, household media, and a television experience designed to feel like television rather than endless thumbnail scrolling.
+Nomadic TV is an active streaming/media platform centered on live channels, guide-driven discovery, household media, movies and shows, virtual linear channels, and curated programming.
 
-Current public status: active development and content/provider outreach.
+Current public engineering truth:
+- canonical integrated source observed at version 0.9.2-integrated / versionCode 11
+- recent device evidence exists for integrated viewer surfaces
+- current integrated physical acceptance is not claimed without a completed device acceptance battery
+- hosted/public media is rights-gated
+- external providers use official routes unless explicit redistribution/streaming rights permit hosting
+- personal media remains private
 
-The Nomadic TV visual identity will remain distinct when migrated under Nomadic Labs.
+Its Freeze-Up Alaska Broadcast / underground-TV identity remains distinct from the Nomadic Labs umbrella design.
 
-### Nexus / ToolNeuron
+### Nexus — /nexus/
 
-Nexus is the planned community and catalog surface for models, skills, plugins, packages, developer tools, and community publishing.
+Nexus is the ecosystem catalog and community surface for ToolNeuron / Covert Edge, Covert Desktop, Covert Engine, models, skills, plugins, workflows, connectors, themes, packages, and release metadata.
 
-The existing Nexus visual direction is preserved. Production migration is intended to support real accounts, publishers, submissions, moderation, package versions and hashes, downloads, APIs, and administration.
+Current public truth:
+- a private reference site and versioned migration handoff exist
+- a real Nexus API boundary exists
+- catalog structure and governed publishing flow are defined
+- production users/publishers, approved public packages, model results, release artifacts, and community counts must remain empty until actually implemented and verified
 
-Current public status: migration and product development.
+Public API source:
+https://github.com/AnonymousNomad/covert-nexus-api
 
-### Covert
+Its visual identity remains a living binary-city / data-realm rather than a generic green-code background.
 
-Covert is a local-first governed AI developer platform focused on resident assistance, model/runtime control, context control, workflow orchestration, execution authority, verification, and evidence-backed mission results.
+### Covert — /covert/
 
-Current public status: active engineering.
+Covert is an active local-first governed AI developer-platform program centered on resident assistance, model/runtime control, context control, workflow/orchestration, execution authority, verification, and evidence-backed mission results.
 
-Do not infer that unfinished Covert capabilities are released merely because they are documented or planned.
+Public source:
+https://github.com/AnonymousNomad/covert-coder
 
-### Workshop
+Planned architecture and unfinished features must not be presented as released behavior.
 
-Nomadic Labs also covers research, prototypes, open-source contributions, release evidence, and delivered client work.
+### Workshop — /workshop/
 
-A recent client example is the Cranes Mill Baptist Church website project.
+Workshop is the umbrella index for:
+- research
+- client work
+- open-source contributions
+- prototypes
+- verification evidence
+- release records
+
+An experiment or evidence artifact is not automatically a released product.
+
+## Delivered client work
+
+A recent delivered client example is the Cranes Mill Baptist Church website project, covering redesign, media and sermon integration, maps, events and giving paths, hosting migration, and production publishing.
 
 ## Site architecture
 
-Nomadic Labs is the umbrella property. Product sites remain distinct worlds.
+Nomadic Labs is the umbrella property. Product worlds remain distinct.
 
-Planned public surfaces include:
-- nomadic-labs.dev — main hub
-- tv.nomadic-labs.dev — Nomadic TV
-- nexus.nomadic-labs.dev — Nexus
-- covert.nomadic-labs.dev — Covert
-- releases.nomadic-labs.dev — release/artifact surface
+Current consolidated routes:
+- / — Nomadic Labs umbrella
+- /tv/ — Nomadic TV
+- /nexus/ — Nexus
+- /covert/ — Covert
+- /workshop/ — research/client/open-source/release index
 
-Specific product surfaces should only be described as live after they are actually deployed and verified.
+The public website registry is the source of truth for shared project descriptions and status.
 
 ## Engineering doctrine
-
-Nomadic Labs follows a verify-first development pattern:
 
 OBSERVE -> DIAGNOSE -> REPAIR -> RERUN -> VERIFY -> CONTINUE
 
@@ -78,31 +100,28 @@ evidence > confidence
 
 ## Website guide
 
-The site includes an embedded public support guide.
-
-The guide:
-- answers questions about Nomadic Labs, the builder, and public projects
-- is grounded in curated public information
-- must distinguish active work from completed releases
-- must say when information is unavailable
-- must not expose credentials, private files, private memories, or workstation data
-
-Initial inference target: Cloudflare Workers AI.
+The embedded Ask Nomadic guide:
+- uses Cloudflare Workers AI
+- answers from the curated public Nomadic Labs registry
+- distinguishes active engineering from verified/released work
+- says when information is unavailable
+- does not expose credentials, private files, private memories, or workstation data
 
 ## Visual direction
 
-The final Nomadic Labs design is intentionally not a generic SaaS portfolio.
+The final Nomadic Labs homepage is not intended to be a generic SaaS portfolio.
 
-The design direction is a restrained, professional off-grid frontier environment using:
-- dark northern weather and rain
-- worn electrical infrastructure
-- power lines and subtle static discharge
+Direction:
+- restrained professional off-grid frontier environment
+- northern weather and rain
+- worn electrical infrastructure and power lines
+- subtle static discharge
 - water and signal systems
 - restrained holographic instrumentation
 - original science-fiction influence
 - cinematic atmosphere without copying existing franchises
 
-Nomadic TV and Nexus retain their own visual identities.
+Nomadic TV, Nexus, and Covert retain their own visual systems.
 
 ---
 Last updated: 2026-10-23

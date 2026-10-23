@@ -32,6 +32,8 @@ h1{font-size:clamp(3.8rem,10vw,8.5rem);line-height:.85;letter-spacing:-.07em;mar
 .project-row>div{display:flex;align-items:baseline;gap:16px}
 .index{font:600 .67rem var(--mono);color:#62747c}
 .project-row h3{font-size:1.35rem;margin:0}
+.project-row h3 a,.status{text-decoration:none}
+.project-row h3 a:hover,.project-row h3 a:focus,.status:hover,.status:focus{color:var(--text)}
 .project-row p{margin:0;color:var(--muted);line-height:1.55}
 .status{white-space:nowrap;color:#82949c;font:600 .68rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
 .guide-section{padding:100px 0 110px;display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;border-top:1px solid var(--line)}
