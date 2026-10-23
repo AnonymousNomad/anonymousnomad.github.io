@@ -115,7 +115,7 @@ export const PUBLIC_KNOWLEDGE = [
     id: project.id,
     title: project.name,
     tags: [project.name.toLowerCase(), project.kind.toLowerCase(), ...project.capabilities.map((value) => value.toLowerCase())],
-    body: project.summary + ' Current public status: ' + project.status + '. ' + project.currentTruth + ' Boundaries: ' + project.boundaries.join('; ') + '.'
+    body: project.summary + ' Current public status: ' + project.status + '. Hub integration: ' + project.integrationState + '. Current hub route: ' + project.route + '. Reserved future domain: ' + (project.futureDomain || 'none') + '. ' + project.currentTruth + ' Boundaries: ' + project.boundaries.join('; ') + '.'
   })),
   {
     id: 'site-plan',
