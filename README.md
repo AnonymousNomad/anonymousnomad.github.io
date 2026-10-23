@@ -9,6 +9,9 @@ Production: https://nomadic-labs.dev/
 The public site is intentionally split into a shared umbrella and distinct product worlds:
 
 - `/` — Nomadic Labs
+- `/about/` — builder and operating philosophy
+- `/status/` — public project/integration status
+- `/privacy/` — public site and Ask Nomadic boundary
 - `/tv/` — Nomadic TV
 - `/nexus/` — Nexus
 - `/covert/` — Covert
@@ -32,6 +35,10 @@ These registries feed:
 Public registry API:
 
 `GET /api/site-registry`
+
+Machine-readable hub contract:
+
+`GET /.well-known/nomadic-labs.json`
 
 ## Ask Nomadic
 
