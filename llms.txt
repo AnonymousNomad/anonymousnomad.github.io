@@ -79,10 +79,23 @@ A recent delivered client example is the Cranes Mill Baptist Church website proj
 
 ## Site architecture
 
-Nomadic Labs is the umbrella property. Product worlds remain distinct.
+Nomadic Labs is the umbrella property and public control plane. Product worlds remain distinct and independently deployable.
+
+Shared public foundations:
+- project identity and status registry
+- global discovery/navigation contract
+- Ask Nomadic support knowledge
+- release/evidence conventions
+- privacy/security boundary
+- stable hub routes
+
+A product subdomain becomes canonical only after its independent deployment is ready and verified. Until then, its stable hub route remains the public entry point.
 
 Current consolidated routes:
 - / — Nomadic Labs umbrella
+- /about/ — builder and operating philosophy
+- /status/ — public project/integration status
+- /privacy/ — public site and guide privacy boundary
 - /tv/ — Nomadic TV
 - /nexus/ — Nexus
 - /covert/ — Covert
