@@ -1,71 +1,79 @@
-# Nomadic Labs — Cloudflare Pages Deployment
+# Nomadic Labs — Deployment
 
-Canonical domain: https://nomadic-labs.dev/
+Canonical domain:
 
-Cloudflare Pages project: nomadic-labs-hub
+- https://nomadic-labs.dev/
 
-## Working copy
+Current Cloudflare Pages project:
 
-Current repository checkout:
+- `nomadic-labs-hub`
 
-E:\\nomadic-labs-cloudflare-preview
+## Source and configuration
 
-## Configuration
+Deployment configuration is source-controlled in `wrangler.toml`.
 
-wrangler.toml is source-controlled and defines:
-- project name
-- build output directory
-- compatibility date
-- Workers AI binding AI
+The site currently uses:
+- static HTML/CSS/ES modules
+- Cloudflare Pages
+- Pages Functions
+- Workers AI binding `AI`
 
-Do not place credentials or OAuth tokens in the repository.
+Never place Cloudflare credentials or OAuth tokens in the repository.
 
-## Preview deployment
+## Preview-first workflow
 
-Use a non-production branch for verification.
+From a clean repository checkout:
 
-From E:\\nomadic-labs-cloudflare-preview, run Wrangler Pages deploy against project nomadic-labs-hub and pass a non-production --branch value.
+```powershell
+wrangler pages deploy . --project-name nomadic-labs-hub --branch <preview-branch> --commit-dirty=true
+```
 
-Verify the exact preview deployment before promoting anything.
+Use a non-production branch for design and integration work.
 
-Minimum checks:
+Minimum preview checks:
 - root returns 200
-- /tv/, /nexus/, /covert/, /workshop/ return 200
+- About, Status, Privacy, TV, Nexus, Covert, and Workshop return 200
 - representative child routes return 200
-- GET /api/site-registry returns the expected registry
-- GET /api/guide returns health 200
-- POST /api/guide returns a grounded answer
-- private-data and prompt-injection checks are refused
-- no stale route claims or broken product links
+- `GET /api/site-registry` returns the expected schema
+- `GET /.well-known/nomadic-labs.json` returns the hub contract
+- `GET /api/guide` returns health 200
+- `POST /api/guide` answers from public knowledge
+- private-data and prompt-injection tests are refused
+- mobile navigation does not clip
+- reduced-motion behavior remains usable
+- no stale or private implementation paths appear in public output
 
-## Production
+## Production gate
 
-Do not overwrite production merely because preview deployment succeeds.
+Do not promote a preview merely because deployment succeeds.
 
-Promote only an accepted commit/branch after verification.
+Production requires:
+1. accepted source commit;
+2. route verification;
+3. guide verification;
+4. public status review;
+5. privacy/security review;
+6. responsive visual review;
+7. rollback path.
 
 Current custom domains:
-- nomadic-labs.dev
-- www.nomadic-labs.dev
-
-Both domains were verified Active in Cloudflare Pages on 2026-10-23.
+- `nomadic-labs.dev`
+- `www.nomadic-labs.dev`
 
 ## Product deployments
 
-The umbrella repository does not absorb application source.
+The hub repository does not absorb application source.
 
-Future product-specific deployments may be connected through:
-- tv.nomadic-labs.dev
-- nexus.nomadic-labs.dev
-- covert.nomadic-labs.dev
-- releases.nomadic-labs.dev
+Reserved future product hostnames:
+- `tv.nomadic-labs.dev`
+- `nexus.nomadic-labs.dev`
+- `covert.nomadic-labs.dev`
+- `releases.nomadic-labs.dev`
 
-Those may remain independent Cloudflare projects while the umbrella routes continue to provide stable discovery/navigation.
+Do not create or advertise a product hostname as live until its independent deployment passes the subdomain promotion gate in `docs/CONSOLIDATION_MAP.md`.
 
-## Recovery
+The stable hub routes remain available whether or not a product later receives its own hostname.
 
-Before a major visual rewrite:
-1. commit the current accepted content architecture;
-2. create a new design branch;
-3. preserve src/data/site-registry.js, src/data/section-registry.js, Pages Functions, and route contracts unless the migration itself requires changes;
-4. verify the public registry and guide after every major restructuring.
+## Platform direction
+
+Cloudflare currently recommends Workers as the primary platform for new applications, while Pages remains supported and suitable for the existing hub. New product deployments should choose Workers/Static Assets or Pages based on actual runtime needs rather than forcing one hosting model across every project.
