@@ -136,3 +136,60 @@ Candidate upgrades:
 - GSAP-driven camera transitions into project worlds
 
 The underlying semantic site and project registry stay independent from the renderer.
+
+
+## Electrical-system research — 2026-10-23
+
+The electrical identity must behave as one causal system, not a stack of decorative effects.
+
+### Rendering pattern
+
+Use four synchronized layers:
+
+1. **Physical grid**
+   - utility poles, conductors, service drop, transformer/outpost load
+   - visible charge propagation follows the actual wire geometry
+
+2. **Corona / branching discharge**
+   - blue-white core with softer cyan falloff
+   - irregular branches generated from deterministic temporal noise
+   - short-lived events, not constant lightning
+
+3. **Typography instability**
+   - real DOM text remains selectable and indexable
+   - SVG `feTurbulence` + `feDisplacementMap` is applied only during short grid-surge windows
+   - tiny clipped duplicate channels create momentary signal separation/static
+   - no continuous full-page glitch
+
+4. **Environmental response**
+   - outpost practical lights rise with grid voltage
+   - wet-ground reflections flash during a surge
+   - radio mast/service point can briefly corona
+   - the same surge state drives every layer
+
+### Why not a looping glitch effect
+
+A permanent glitch loop reads as a template effect and makes the interface feel broken.
+
+The professional version should spend most of its time stable. The instability is meaningful because it happens when the electrical system loads or discharges.
+
+### Technical guidance
+
+- SVG turbulence/displacement is broadly supported but can be expensive when continuously animated on large elements.
+- Restrict animated filters to the hero title and short event windows.
+- Continuous atmosphere belongs in Canvas/WebGL rendering.
+- Keep requestAnimationFrame work bounded and pause it when the document is hidden.
+- Cap device pixel ratio and particle counts.
+- Reduced-motion users receive the same visual hierarchy without continuous rain, jitter, or repeated discharge.
+
+### V3 implementation
+
+The current prototype now synchronizes:
+- current traveling along the utility conductors
+- service-point branch arcs
+- blue-white title corona
+- brief title displacement/static
+- station practical-light voltage response
+- wet-ground electrical reflection
+
+This is the intended direction for the final outpost.
