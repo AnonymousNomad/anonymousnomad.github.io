@@ -1,0 +1,29 @@
+{
+  "schema": "nomadic-labs.hub-contract.v1",
+  "canonical": "https://nomadic-labs.dev/",
+  "registry": "https://nomadic-labs.dev/api/site-registry",
+  "guide": "https://nomadic-labs.dev/api/guide",
+  "status": "https://nomadic-labs.dev/status/",
+  "products": {
+    "nomadic-tv": {
+      "hub_route": "/tv/",
+      "future_domain": "https://tv.nomadic-labs.dev",
+      "state": "HUB_READY_PRODUCT_DEPLOYMENT_PENDING"
+    },
+    "nexus": {
+      "hub_route": "/nexus/",
+      "future_domain": "https://nexus.nomadic-labs.dev",
+      "state": "HUB_READY_PRODUCT_DEPLOYMENT_PENDING"
+    },
+    "covert": {
+      "hub_route": "/covert/",
+      "future_domain": "https://covert.nomadic-labs.dev",
+      "state": "HUB_READY_PUBLIC_SITE_PENDING"
+    },
+    "workshop": {
+      "hub_route": "/workshop/",
+      "future_domain": null,
+      "state": "HUB_NATIVE"
+    }
+  }
+}
