@@ -132,6 +132,8 @@ main{width:100%}
 .outpost-copy{
   grid-column:1;
   align-self:center;
+  width:100%;
+  min-width:0;
   max-width:830px;
   padding:48px 0 62px;
   position:relative;
@@ -176,6 +178,20 @@ main{width:100%}
 }
 .outpost-title>span::before{color:rgba(154,222,255,.8);transform:translateX(-1px)}
 .outpost-title>span::after{color:rgba(235,250,255,.88);transform:translateX(1px)}
+.outpost-title::before{
+  content:"";
+  position:absolute;
+  z-index:3;
+  left:-4%;
+  top:43%;
+  width:42%;
+  height:2px;
+  pointer-events:none;
+  opacity:0;
+  transform:translateX(-35%) skewX(-18deg);
+  background:linear-gradient(90deg,transparent,rgba(212,246,255,.22) 38%,rgba(244,253,255,.95) 74%,transparent);
+  box-shadow:0 0 12px rgba(144,219,255,.72),0 0 32px rgba(90,177,219,.26)
+}
 .outpost-title::after{
   content:"";
   position:absolute;
@@ -183,6 +199,15 @@ main{width:100%}
   height:1px;
   background:linear-gradient(90deg,transparent,rgba(221,247,255,.7) 18%,rgba(111,173,201,.12) 68%,transparent);
   opacity:.08
+}
+.outpost-hero.grid-surge .outpost-title::before{
+  animation:charge-sweep 180ms cubic-bezier(.1,.7,.2,1) 1
+}
+@keyframes charge-sweep{
+  0%{opacity:0;transform:translateX(-35%) skewX(-18deg);width:30%}
+  18%{opacity:.88}
+  70%{opacity:.44}
+  100%{opacity:0;transform:translateX(190%) skewX(-18deg);width:54%}
 }
 .outpost-hero.grid-surge .outpost-title{
   filter:url(#grid-displacement);
@@ -552,9 +577,12 @@ footer>span:last-child{text-align:right}
 @media(max-width:680px){
   .site-header{padding:14px 0 12px;align-items:flex-start;flex-direction:column;gap:12px}
   .site-header nav{gap:13px}
-  .outpost-statusbar{grid-template-columns:1fr 1fr;font-size:.52rem}
-  .status-weather{text-align:right}
-  .outpost-title{font-size:clamp(3.45rem,18vw,5.2rem);line-height:.75}
+  .outpost-statusbar{grid-template-columns:minmax(0,1fr) minmax(0,1fr);font-size:.47rem;gap:10px}
+  .outpost-statusbar span{min-width:0;white-space:nowrap}
+  .status-weather{justify-self:end;text-align:right}
+  .outpost-copy{min-width:0}
+  .outpost-title{width:100%;font-size:clamp(3.2rem,14vw,4.25rem);line-height:.75;letter-spacing:-.07em}
+  .outpost-title>span{width:100%;max-width:100%}
   .outpost-copy{padding-top:44px}
   .outpost-mantra{font-size:.63rem;line-height:1.8;letter-spacing:.14em}
   .lede{font-size:.95rem;line-height:1.64}
