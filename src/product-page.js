@@ -1,5 +1,8 @@
 import { SITE, projectById } from './data/site-registry.js';
 import { sectionsForFamily } from './data/section-registry.js';
+import { mountHubSwitcher } from './hub-shell.js';
+
+mountHubSwitcher();
 
 const id = document.body.dataset.project;
 const project = projectById(id);
