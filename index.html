@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#070b0d">
+  <meta name="theme-color" content="#05070a">
   <title>Nomadic Labs — Power. Water. Signal. Code.</title>
-  <meta name="description" content="Nomadic Labs is the home of Nomadic TV, Nexus, Covert, and independent engineering work by AnonymousNomad.">
+  <meta name="description" content="Nomadic Labs is the public outpost for Nomadic TV, Nexus, Covert, independent engineering, research, and delivered work by AnonymousNomad.">
   <link rel="canonical" href="https://nomadic-labs.dev/">
   <link rel="stylesheet" href="/src/styles/labs-foundation.css">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:title" content="Nomadic Labs">
-  <meta property="og:description" content="Independent software, media, systems, and field-built technology.">
+  <meta property="og:description" content="Independent systems engineering. Power. Water. Signal. Code.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nomadic-labs.dev/">
   <meta name="twitter:card" content="summary_large_image">
@@ -18,73 +18,118 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Nomadic Labs home"><span class="power-dot" aria-hidden="true"></span><span>NOMADIC LABS</span></a>
-    <nav aria-label="Primary"><a href="#work">Work</a><a href="/about/">About</a><a href="/status/">Status</a><a href="#guide">Ask Nomadic</a><a href="https://github.com/AnonymousNomad">Source</a></nav>
+    <a class="brand" href="/" aria-label="Nomadic Labs home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>NOMADIC LABS</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#network">Network</a>
+      <a href="/about/">Builder</a>
+      <a href="/status/">Status</a>
+      <a href="#guide">Ask Nomadic</a>
+      <a href="https://github.com/AnonymousNomad">Source</a>
+    </nav>
   </header>
 
   <main>
     <section class="outpost-hero" aria-labelledby="hero-title">
       <canvas class="outpost-canvas" data-outpost-canvas aria-hidden="true"></canvas>
+      <div class="storm-scrim" aria-hidden="true"></div>
       <div class="outpost-grain" aria-hidden="true"></div>
       <div class="outpost-vignette" aria-hidden="true"></div>
 
       <div class="outpost-interface">
         <div class="outpost-statusbar" aria-label="Outpost status">
-          <span>OUTPOST / NL-01</span>
-          <span class="status-signal"><i aria-hidden="true"></i> GRID ONLINE</span>
-          <span class="status-weather">WEATHER / ACTIVE</span>
+          <span class="outpost-id">REMOTE NODE / NL-01</span>
+          <span class="status-signal"><i aria-hidden="true"></i> POWER BUS / ONLINE</span>
+          <span>SIGNAL / LOCKED</span>
+          <span class="status-weather">WEATHER / STORM</span>
         </div>
 
         <div class="outpost-copy">
           <p class="eyebrow">INDEPENDENT SYSTEMS ENGINEERING</p>
-          <h1 id="hero-title" class="outpost-title" data-outpost-title>NOMADIC<br>LABS</h1>
+          <h1 id="hero-title" class="outpost-title" data-outpost-title>
+            <span>NOMADIC</span>
+            <span>LABS</span>
+          </h1>
           <p class="outpost-mantra">POWER <span>/</span> WATER <span>/</span> SIGNAL <span>/</span> CODE</p>
-          <p class="lede">One builder. Multiple systems. Software, AI, streaming, infrastructure, research, and delivered work—connected here without flattening them into one generic product.</p>
+          <p class="lede">A working outpost for software, AI, streaming, infrastructure, research, and field-built systems. Separate products. Shared standards. One operator.</p>
           <div class="hero-actions">
-            <a class="primary-action" href="#work">Enter the work</a>
-            <a class="text-action" href="#guide">Ask Nomadic</a>
+            <a class="primary-action" href="#network"><span>Enter the network</span><b aria-hidden="true">↘</b></a>
+            <a class="text-action" href="#guide">Ask the resident</a>
           </div>
         </div>
 
-        <div class="outpost-readout" aria-label="Site operating principles">
-          <span><b>01</b> VERIFY FIRST</span>
-          <span><b>02</b> BUILD THE SYSTEM</span>
-          <span><b>03</b> EVIDENCE &gt; CONFIDENCE</span>
-        </div>
+        <aside class="outpost-readout" aria-label="Operating doctrine">
+          <p>OPERATING DOCTRINE</p>
+          <span><b>01</b> OBSERVE / DIAGNOSE</span>
+          <span><b>02</b> REPAIR / RERUN</span>
+          <span><b>03</b> VERIFY / CONTINUE</span>
+          <span><b>04</b> EVIDENCE &gt; CONFIDENCE</span>
+        </aside>
 
         <div class="outpost-caption">
-          <span>PUBLIC NODE / NOMADIC-LABS.DEV</span>
+          <span>PUBLIC ACCESS / NOMADIC-LABS.DEV</span>
+          <span>FIELD SYSTEMS / ACTIVE</span>
           <span>SCROLL TO ENTER</span>
         </div>
       </div>
     </section>
 
-    <section class="work" id="work" aria-labelledby="work-title">
-      <div class="section-heading"><p class="eyebrow">PROJECT WORLDS</p><h2 id="work-title">Separate identities. Shared home.</h2></div>
+    <section class="network" id="network" aria-labelledby="network-title">
+      <div class="network-intro">
+        <div>
+          <p class="eyebrow">OUTPOST NETWORK</p>
+          <h2 id="network-title">Four systems.<br>One public control plane.</h2>
+        </div>
+        <p>Nomadic Labs is the shared entry point, not a template forced onto every project. Each system keeps its own runtime, visual identity, release cadence, and evidence trail.</p>
+      </div>
       <div class="project-list" data-project-list></div>
     </section>
 
     <section class="guide-section" id="guide" aria-labelledby="guide-title">
       <div class="guide-copy">
-        <p class="eyebrow">SITE RESIDENT</p>
+        <p class="eyebrow">SITE RESIDENT / PUBLIC CHANNEL</p>
         <h2 id="guide-title">Ask Nomadic.</h2>
-        <p>This guide is grounded in the public Nomadic Labs knowledge base. Ask about the projects, the builder, what is currently being developed, or where to find something.</p>
-        <p class="privacy-note">It answers from public project information only. Private workstation data, credentials, and personal records are not exposed to the website model.</p>
-      </div>
-      <div class="guide" data-guide>
-        <div class="guide-status"><span class="guide-light" aria-hidden="true"></span><span data-guide-status>Guide ready</span></div>
-        <div class="messages" data-guide-messages aria-live="polite"><div class="message assistant">I’m the Nomadic Labs site guide. Ask me what Nomadic TV is, what Nexus is for, what Covert does, or about the builder behind the projects.</div></div>
-        <div class="suggestions" aria-label="Suggested questions">
-          <button type="button" data-question="What is Nomadic TV?">What is Nomadic TV?</button>
-          <button type="button" data-question="What is Covert?">What is Covert?</button>
-          <button type="button" data-question="Who built Nomadic Labs?">Who built this?</button>
+        <p>The resident knows the public project registry, current integration state, project boundaries, and where each system lives. It will not invent releases or expose private workstation data.</p>
+        <div class="guide-notes">
+          <span>PUBLIC KNOWLEDGE ONLY</span>
+          <span>SERVER-SIDE AI</span>
+          <span>NO WORKSTATION ACCESS</span>
         </div>
-        <form data-guide-form><label class="sr-only" for="guide-input">Ask Nomadic Labs</label><input id="guide-input" data-guide-input maxlength="800" autocomplete="off" placeholder="Ask about Nomadic Labs…" required><button type="submit">Ask</button></form>
+      </div>
+
+      <div class="guide-shell" data-guide>
+        <div class="guide-bezel" aria-hidden="true">
+          <span>NOMADIC FIELD TERMINAL</span>
+          <span>CH / PUBLIC</span>
+        </div>
+        <div class="guide-status"><span class="guide-light" aria-hidden="true"></span><span data-guide-status>Resident online</span></div>
+        <div class="messages" data-guide-messages aria-live="polite">
+          <div class="message assistant">Public channel is open. Ask about Nomadic TV, Nexus, Covert, the Workshop, or the builder behind Nomadic Labs.</div>
+        </div>
+        <div class="suggestions" aria-label="Suggested questions">
+          <button type="button" data-question="What is Nomadic TV?">Nomadic TV</button>
+          <button type="button" data-question="What is Nexus?">Nexus</button>
+          <button type="button" data-question="What is Covert?">Covert</button>
+          <button type="button" data-question="What is live right now?">Current status</button>
+        </div>
+        <form data-guide-form>
+          <label class="sr-only" for="guide-input">Ask Nomadic Labs</label>
+          <span aria-hidden="true">&gt;</span>
+          <input id="guide-input" data-guide-input maxlength="800" autocomplete="off" placeholder="ask the outpost…" required>
+          <button type="submit">Transmit</button>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer><span>© 2026 Nomadic Labs · AnonymousNomad</span><span>evidence &gt; confidence</span></footer>
+  <footer>
+    <span>© 2026 NOMADIC LABS · ANONYMOUSNOMAD</span>
+    <nav aria-label="Footer"><a href="/about/">Builder</a><a href="/status/">Status</a><a href="/privacy/">Privacy</a></nav>
+    <span>POWER / WATER / SIGNAL / CODE</span>
+  </footer>
+
   <script type="module" src="/src/outpost.js"></script>
   <script type="module" src="/src/labs.js"></script>
   <script type="module" src="/src/guide.js"></script>
