@@ -22,12 +22,40 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">INDEPENDENT DEVELOPMENT LAB</p>
-      <h1 id="hero-title">Power. Water.<br>Signal. Code.</h1>
-      <p class="lede">Nomadic Labs is the shared home for independent software, media, AI systems, and field-built technology. Each project keeps its own identity. This is the place that connects them.</p>
-      <div class="hero-actions"><a class="primary-action" href="#work">Explore the work</a><a class="text-action" href="#guide">Ask the site guide</a></div>
-      <div class="foundation-note" role="note"><span>FOUNDATION PREVIEW</span><span>Visual environment in development</span></div>
+    <section class="outpost-hero" aria-labelledby="hero-title">
+      <canvas class="outpost-canvas" data-outpost-canvas aria-hidden="true"></canvas>
+      <div class="outpost-grain" aria-hidden="true"></div>
+      <div class="outpost-vignette" aria-hidden="true"></div>
+
+      <div class="outpost-interface">
+        <div class="outpost-statusbar" aria-label="Outpost status">
+          <span>OUTPOST / NL-01</span>
+          <span class="status-signal"><i aria-hidden="true"></i> GRID ONLINE</span>
+          <span class="status-weather">WEATHER / ACTIVE</span>
+        </div>
+
+        <div class="outpost-copy">
+          <p class="eyebrow">INDEPENDENT SYSTEMS ENGINEERING</p>
+          <h1 id="hero-title" class="outpost-title" data-outpost-title>NOMADIC<br>LABS</h1>
+          <p class="outpost-mantra">POWER <span>/</span> WATER <span>/</span> SIGNAL <span>/</span> CODE</p>
+          <p class="lede">One builder. Multiple systems. Software, AI, streaming, infrastructure, research, and delivered work—connected here without flattening them into one generic product.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#work">Enter the work</a>
+            <a class="text-action" href="#guide">Ask Nomadic</a>
+          </div>
+        </div>
+
+        <div class="outpost-readout" aria-label="Site operating principles">
+          <span><b>01</b> VERIFY FIRST</span>
+          <span><b>02</b> BUILD THE SYSTEM</span>
+          <span><b>03</b> EVIDENCE &gt; CONFIDENCE</span>
+        </div>
+
+        <div class="outpost-caption">
+          <span>PUBLIC NODE / NOMADIC-LABS.DEV</span>
+          <span>SCROLL TO ENTER</span>
+        </div>
+      </div>
     </section>
 
     <section class="work" id="work" aria-labelledby="work-title">
@@ -56,6 +84,7 @@
   </main>
 
   <footer><span>© 2026 Nomadic Labs · AnonymousNomad</span><span>evidence &gt; confidence</span></footer>
+  <script type="module" src="/src/outpost.js"></script>
   <script type="module" src="/src/labs.js"></script>
   <script type="module" src="/src/guide.js"></script>
 </body>
