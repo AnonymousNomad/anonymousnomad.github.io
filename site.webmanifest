@@ -1,0 +1,10 @@
+{
+  "name": "Nomadic Labs",
+  "short_name": "Nomadic Labs",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#05080a",
+  "theme_color": "#05080a",
+  "description": "Independent software, media, AI systems, engineering work, research, and release evidence."
+}
