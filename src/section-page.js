@@ -1,5 +1,8 @@
 import { projectById } from './data/site-registry.js';
 import { sectionByFamily, sectionsForFamily } from './data/section-registry.js';
+import { mountHubSwitcher } from './hub-shell.js';
+
+mountHubSwitcher();
 
 const family = document.body.dataset.family;
 const sectionId = document.body.dataset.section;
