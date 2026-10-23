@@ -33,7 +33,16 @@
 
   <main>
     <section class="outpost-hero" aria-labelledby="hero-title">
+      <svg class="effect-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="grid-displacement" x="-18%" y="-18%" width="136%" height="136%" color-interpolation-filters="sRGB">
+            <feTurbulence id="grid-noise" type="fractalNoise" baseFrequency="0.006 0.045" numOctaves="2" seed="7" result="noise"></feTurbulence>
+            <feDisplacementMap id="grid-warp" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+          </filter>
+        </defs>
+      </svg>
       <canvas class="outpost-canvas" data-outpost-canvas aria-hidden="true"></canvas>
+      <canvas class="power-canvas" data-power-canvas aria-hidden="true"></canvas>
       <div class="storm-scrim" aria-hidden="true"></div>
       <div class="outpost-grain" aria-hidden="true"></div>
       <div class="outpost-vignette" aria-hidden="true"></div>
@@ -49,8 +58,8 @@
         <div class="outpost-copy">
           <p class="eyebrow">INDEPENDENT SYSTEMS ENGINEERING</p>
           <h1 id="hero-title" class="outpost-title" data-outpost-title>
-            <span>NOMADIC</span>
-            <span>LABS</span>
+            <span data-static-text="NOMADIC">NOMADIC</span>
+            <span data-static-text="LABS">LABS</span>
           </h1>
           <p class="outpost-mantra">POWER <span>/</span> WATER <span>/</span> SIGNAL <span>/</span> CODE</p>
           <p class="lede">A working outpost for software, AI, streaming, infrastructure, research, and field-built systems. Separate products. Shared standards. One operator.</p>
