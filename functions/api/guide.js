@@ -15,7 +15,14 @@ const PROJECT_HISTORY_KNOWLEDGE = WORKSHOP_PROJECTS.map((item) => ({
   body: item.description + ' Historical status: ' + item.status + '. Evidence boundary: ' + item.evidence + ' Public repository: ' + item.repo
 }));
 
-const KNOWLEDGE = [...PUBLIC_KNOWLEDGE, ...SECTION_KNOWLEDGE, ...PROJECT_HISTORY_KNOWLEDGE];
+const PROJECT_HISTORY_INDEX = {
+  id: 'workshop-project-history-index',
+  title: 'Workshop preserved project history',
+  tags: ['older projects','old projects','previous portfolio','preserved projects','project history','workshop history','what projects'],
+  body: 'The earlier Nomadic Labs public portfolio is preserved in Workshop as historical snapshots. The six preserved projects are: AIDE Sovereign Workbench; GhostCode; Vitalis Core; Vitalis Devcore; Cyber SOP Harness; and LOREIN — Sovereign Entity. Their historical status and evidence boundaries are retained and are not automatically current release claims.'
+};
+
+const KNOWLEDGE = [...PUBLIC_KNOWLEDGE, ...SECTION_KNOWLEDGE, PROJECT_HISTORY_INDEX, ...PROJECT_HISTORY_KNOWLEDGE];
 
 const STOP_WORDS = new Set(['the','a','an','is','are','to','of','and','or','for','in','on','me','you','your','about','tell','what','who','how','do','does','this','that','it']);
 
