@@ -1,6 +1,6 @@
 # Downloaded from the existing Cloudflare Pages project, then checked into source control.
 name = "nomadic-labs-hub"
-pages_build_output_dir = "."
+pages_build_output_dir = "./dist"
 compatibility_date = "2026-10-23"
 
 [ai]
