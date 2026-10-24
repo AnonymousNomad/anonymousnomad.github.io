@@ -1,201 +1,141 @@
 # Nomadic Labs — Consolidation Map
 
-Status: hub foundation and outpost work in progress.
+Status: public-content migration complete for the Nomadic Labs legacy portfolio and Nexus reference experience. Independent product-runtime deployments remain separate work.
 
-## Purpose
+## Public control plane
 
-Nomadic Labs is the public control plane for a family of independently deployable projects. Consolidation means one professional public identity, one navigation and support contract, one truthful status/evidence model, and clear handoffs between projects. It does **not** mean copying every application into one repository or forcing every product to share one visual design.
-
-## Shared public control plane
-
-Canonical domain:
-
-- https://nomadic-labs.dev/
+Canonical domain: https://nomadic-labs.dev/
 
 Shared surfaces:
-
 - `/` — Nomadic Labs outpost / umbrella
-- `/about/` — builder and operating philosophy
-- `/status/` — truthful project and integration status
-- `/privacy/` — public website and Ask Nomadic boundary
-- `/api/site-registry` — machine-readable public project registry
-- `/api/guide` — Ask Nomadic site guide
+- `/about/` — builder + engineering philosophy
+- `/status/` — public product/integration status
+- `/privacy/` — public-site / Ask Nomadic boundary
+- `/api/site-registry` — machine-readable registry
+- `/api/guide` — Ask Nomadic
 - `/.well-known/nomadic-labs.json` — compact hub contract
-- `/llms.txt` — AI-readable public context
+- `/llms.txt` — public AI-readable context
 
-The source-controlled public registry owns shared names, summaries, statuses, routes, boundaries, and deployment states.
+## Nomadic TV
 
-## Product worlds
+Hub route: `/tv/`
 
-### Nomadic TV
+State: `HUB_READY_PRODUCT_DEPLOYMENT_PENDING`
 
-Current hub route:
+The hub contains the public information architecture and truthful product boundary. The Android/OTT app and household gateway remain independently developed and are not copied into the public website.
 
-- `/tv/`
+Reserved future hostname: `tv.nomadic-labs.dev`
 
-Reserved future product hostname:
+Design identity to preserve: Freeze-Up Alaska Broadcast / underground-TV.
 
-- `tv.nomadic-labs.dev`
+## Nexus
 
-State:
+Hub route: `/nexus/`
 
-- hub ready
-- product deployment pending
-- active engineering continues separately
+State: `HUB_MIGRATED_PUBLIC_REFERENCE`
 
-Source ownership:
+Migrated from the preserved Nexus handoff:
+- original binary-city/data-realm identity
+- four generated environment plates with desktop/mobile variants
+- gateway copy and telemetry model
+- 11 first-party catalog records
+- three product boundaries
+- Discover/search/filter experience
+- package record inspection
+- product record inspection
+- model registry with truthful empty state
+- developer publishing lifecycle + draft manifest
+- community route with truthful empty state
+- downloads node with truthful empty state
+- release ledger with truthful empty state
+- public catalog/model JSON snapshots
 
-- independent Nomadic TV engineering repository
+Current data truth:
+- 11 catalog records
+- 0 published packages
+- 0 published artifacts
+- 0 model records
+- 0 release records
 
-Public boundary:
+The public migration does **not** claim production accounts, reviewer authorization, artifact upload, signing, approval, or publication controls.
 
-- public/hosted media requires explicit rights
-- provider content uses official/authorized routes
-- household/private media is not public website data
-- device acceptance remains evidence-gated
-
-Design boundary:
-
-- preserve the Freeze-Up Alaska Broadcast / underground-TV identity
-
-### Nexus
-
-Current hub route:
-
-- `/nexus/`
-
-Reserved future product hostname:
-
-- `nexus.nomadic-labs.dev`
-
-State:
-
-- hub ready
-- product deployment pending
-- reference catalog/migration contract preserved
-- public API boundary exists
-
-Public API source:
-
+Separate API/backend boundary:
 - https://github.com/AnonymousNomad/covert-nexus-api
 
-Public boundary:
+Reserved future hostname: `nexus.nomadic-labs.dev`
 
-- no fabricated publishers, downloads, model scores, releases, or community counts
-- executable publication requires real identity/review/integrity controls
+## Covert
 
-Design boundary:
+Hub route: `/covert/`
 
-- preserve the living binary-city / data-realm identity
+State: `HUB_READY_PUBLIC_SITE_PENDING`
 
-### Covert
-
-Current hub route:
-
-- `/covert/`
-
-Reserved future product hostname:
-
-- `covert.nomadic-labs.dev`
-
-State:
-
-- hub ready
-- public product-site deployment pending
-- active engineering continues separately
+The hub contains a truthful product boundary and source handoff. The independently developed Covert platform remains in its own repository/runtime/release system.
 
 Public source:
-
 - https://github.com/AnonymousNomad/covert-coder
 
-Public boundary:
+Reserved future hostname: `covert.nomadic-labs.dev`
 
-- distinguish accepted/verified behavior from planned architecture
-- no universal-superiority claims
-- no silent fallback claims
-- releases require evidence
+## Workshop
 
-Design boundary:
+Hub route: `/workshop/`
 
-- preserve Covert's retro workstation / sovereign developer-platform identity
+State: `HUB_NATIVE_WITH_HISTORY_MIGRATED`
 
-### Workshop
+Migrated from the earlier Nomadic Labs portfolio:
+- builder origin and engineering areas into `/about/`
+- AIDE Sovereign Workbench snapshot
+- GhostCode snapshot
+- Vitalis Core snapshot
+- Vitalis Devcore snapshot
+- Cyber SOP Harness snapshot
+- LOREIN — Sovereign Entity snapshot
+- evidence-group map for the legacy verification files
+- open-source/source links
+- current research lanes
+- Cranes Mill Baptist Church client-work case study
+- release-evidence conventions
 
-Current route:
+Historical test counts/statuses are explicitly labeled as historical snapshots rather than current release claims.
 
-- `/workshop/`
+## Shared vs owned
 
-State:
-
-- native Nomadic Labs surface
-
-Purpose:
-
-- research
-- client work
-- open-source contribution
-- prototypes
-- verification evidence
-- release records
-
-An experiment or evidence artifact is not automatically a released product.
-
-## Shared foundations vs product identity
-
-Shared across the ecosystem:
-
-- route and product identity schema
-- accessible navigation conventions
-- public status semantics
-- evidence/release vocabulary
-- privacy and security boundary
-- Ask Nomadic support handoff
-- machine-readable discovery
-- common quality gates
+Shared by Nomadic Labs:
+- identity
+- navigation contract
+- status vocabulary
+- public registry
+- Ask Nomadic
+- privacy/security boundary
+- release/evidence semantics
+- discovery routes
 
 Owned by each product:
-
-- visual design system
 - application runtime
-- product-specific navigation
 - authentication
-- data model
+- private data
+- product-specific backend
 - tests
 - deployment pipeline
 - release acceptance
+- visual identity beyond the thin hub handoff
 
-## Subdomain promotion gate
+## Deployment rule
 
-A reserved product hostname does not become canonical until all of these are true:
+The public Cloudflare artifact is built into `dist/`. The repository root is **not** published.
 
-1. independent deployment exists;
-2. custom domain is active and TLS is valid;
-3. product navigation includes a clear route back to Nomadic Labs;
-4. product status and canonical URL are reflected in the public registry;
-5. no private APIs or workstation paths are exposed;
-6. sitemap/canonical tags are correct;
-7. mobile and accessibility checks pass;
-8. public claims match current evidence;
-9. rollback path is known;
-10. the hub route remains a stable discovery surface.
+This prevents legacy/source-only material from leaking into the public artifact.
 
-## Deployment direction
+## Remaining consolidation work
 
-The existing Nomadic Labs umbrella remains on Cloudflare Pages while it is working well.
+Content migration is no longer the blocker.
 
-For new product deployments, choose per product:
-- Cloudflare Workers / Static Assets when a new app needs a broader dynamic runtime;
-- Cloudflare Pages when a product is intentionally static or the existing Pages workflow is the simpler fit.
+Remaining product work is:
+1. finish the Nomadic Labs outpost visual polish;
+2. evolve Nomadic TV’s hub/reference pages into its full public website when the TV product/content-provider plan is ready;
+3. build Covert’s dedicated public site when its release positioning is ready;
+4. connect Nexus to production accounts/API/publishing only after its trust and review controls exist;
+5. promote product subdomains only after independent deployment acceptance.
 
-Do not migrate a working surface merely for fashion. Migration must buy a concrete capability or reduce operational risk.
-
-## Non-goals
-
-Do not:
-- absorb Android/native application source into the public website repo;
-- publish private household media through the hub;
-- turn internal worktree paths into public metadata;
-- clone one visual theme across every product;
-- create DNS/subdomain records before a real deployment exists;
-- use redirects to hide unfinished product surfaces;
-- promote preview builds as production.
+Do not copy native/private application repositories into this website to call the migration complete.

@@ -13,7 +13,9 @@
     "nexus": {
       "hub_route": "/nexus/",
       "future_domain": "https://nexus.nomadic-labs.dev",
-      "state": "HUB_READY_PRODUCT_DEPLOYMENT_PENDING"
+      "state": "HUB_MIGRATED_PUBLIC_REFERENCE",
+      "catalog": "/nexus/data/catalog.json",
+      "models": "/nexus/data/models.json"
     },
     "covert": {
       "hub_route": "/covert/",
@@ -23,7 +25,9 @@
     "workshop": {
       "hub_route": "/workshop/",
       "future_domain": null,
-      "state": "HUB_NATIVE"
+      "state": "HUB_NATIVE_WITH_HISTORY_MIGRATED",
+      "projects": "/workshop/projects/",
+      "evidence": "/workshop/evidence/"
     }
   }
 }

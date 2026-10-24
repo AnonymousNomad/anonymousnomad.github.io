@@ -110,6 +110,22 @@ export const NEXUS_SECTIONS = [
 
 export const WORKSHOP_SECTIONS = [
   {
+    id: 'projects',
+    label: 'Projects',
+    route: '/workshop/projects/',
+    title: 'Project History',
+    summary: 'Preserved engineering projects and earlier product lines from the previous Nomadic Labs portfolio.',
+    truth: 'Historical portfolio entries retain their original status/evidence boundary and are not silently rewritten as current releases.'
+  },
+  {
+    id: 'evidence',
+    label: 'Evidence',
+    route: '/workshop/evidence/',
+    title: 'Evidence Map',
+    summary: 'Public map of preserved verification snapshots from prior Nomadic Labs work.',
+    truth: 'Legacy evidence remains in source history; the public site summarizes it without exposing private workstation state or internal paths.'
+  },
+  {
     id: 'research',
     label: 'Research',
     route: '/workshop/research/',

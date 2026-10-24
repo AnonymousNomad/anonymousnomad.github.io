@@ -15,3 +15,16 @@ dl{display:grid;grid-template-columns:140px 1fr;margin:0;max-width:880px;border-
 .note{padding:14px 16px;border-left:2px solid #557584;background:#0a1013;color:#a9b7bd}
 footer{border-top:1px solid var(--line);padding:28px 0 42px;color:#687a81;font:600 .66rem var(--mono);letter-spacing:.06em;display:flex;justify-content:space-between;gap:16px}
 @media(max-width:760px){header{padding:16px 0;align-items:flex-start}.hub-switcher{margin-left:0;width:100%}.status-card-top{display:grid}.integration-state{text-align:left;max-width:none}.content-grid{grid-template-columns:1fr;gap:34px}dl{grid-template-columns:1fr}dd{padding-top:0}footer{flex-direction:column}}
+
+.workshop-record{padding:28px 0;border-top:1px solid var(--line)}
+.workshop-record:last-child{border-bottom:1px solid var(--line)}
+.workshop-record-top{display:flex;justify-content:space-between;gap:28px;align-items:flex-start}
+.workshop-record h2{font-size:1.55rem;margin:0}.workshop-record h2 a{text-decoration:none}
+.workshop-tagline{color:#c0ccd0;font-size:1rem;margin:14px 0 0}
+.workshop-evidence{margin:18px 0 0;padding:14px 16px;border-left:2px solid #527281;background:#081014;color:#8fa0a7;line-height:1.65}
+.workshop-meta{margin-top:14px;color:#62757d;font:600 .64rem var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.evidence-row{display:grid;grid-template-columns:180px 110px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+.evidence-row:last-child{border-bottom:1px solid var(--line)}
+.evidence-row strong{font-size:.92rem}.evidence-row span{color:#9fb6c0;font:700 .62rem var(--mono);letter-spacing:.06em}.evidence-row p{margin:0;color:var(--muted);line-height:1.6}
+.case-study{padding:28px 0;border-top:1px solid var(--line)}.case-study h2{font-size:1.8rem}.case-study p{color:var(--muted);line-height:1.7}
+@media(max-width:760px){.workshop-record-top{display:grid}.evidence-row{grid-template-columns:1fr;gap:7px}}

@@ -1,5 +1,6 @@
 import { PUBLIC_KNOWLEDGE } from '../../src/data/site-registry.js';
 import { TV_SECTIONS, NEXUS_SECTIONS, WORKSHOP_SECTIONS } from '../../src/data/section-registry.js';
+import { WORKSHOP_PROJECTS } from '../../src/data/workshop-projects.js';
 
 const SECTION_KNOWLEDGE = [
   ...TV_SECTIONS.map((item) => ({ id: `tv-${item.id}`, title: `Nomadic TV — ${item.title}`, tags: ['nomadic tv', item.label.toLowerCase(), item.title.toLowerCase()], body: `${item.summary} Current truth: ${item.truth} Route: ${item.route}` })),
@@ -7,7 +8,14 @@ const SECTION_KNOWLEDGE = [
   ...WORKSHOP_SECTIONS.map((item) => ({ id: `workshop-${item.id}`, title: `Workshop — ${item.title}`, tags: ['workshop', item.label.toLowerCase(), item.title.toLowerCase()], body: `${item.summary} Current truth: ${item.truth} Route: ${item.route}` }))
 ];
 
-const KNOWLEDGE = [...PUBLIC_KNOWLEDGE, ...SECTION_KNOWLEDGE];
+const PROJECT_HISTORY_KNOWLEDGE = WORKSHOP_PROJECTS.map((item) => ({
+  id: 'history-' + item.id,
+  title: 'Workshop history — ' + item.name,
+  tags: [item.name.toLowerCase(), item.lineage.toLowerCase(), item.language.toLowerCase(), 'project history', 'workshop'],
+  body: item.description + ' Historical status: ' + item.status + '. Evidence boundary: ' + item.evidence + ' Public repository: ' + item.repo
+}));
+
+const KNOWLEDGE = [...PUBLIC_KNOWLEDGE, ...SECTION_KNOWLEDGE, ...PROJECT_HISTORY_KNOWLEDGE];
 
 const STOP_WORDS = new Set(['the','a','an','is','are','to','of','and','or','for','in','on','me','you','your','about','tell','what','who','how','do','does','this','that','it']);
 

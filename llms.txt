@@ -2,57 +2,92 @@
 
 > Power. Water. Signal. Code.
 
-Nomadic Labs is the umbrella home for independent software, media, AI systems, engineering work, research, client work, and release evidence built by AnonymousNomad.
+Nomadic Labs is the public hub for independent software, media, AI systems, engineering work, research, client work, and release evidence built by AnonymousNomad.
 
 Canonical site: https://nomadic-labs.dev/
 
 ## Builder
 
-AnonymousNomad is an independent developer with an electrical-work background who builds software, AI systems, media products, and practical technical projects.
+AnonymousNomad is an independent developer with an electrical-work background. Public work spans systems/runtime engineering, AI/model integration and evaluation, security/governance, streaming/media, web delivery, open source, and research.
 
-Public themes:
-- hands-on engineering
-- verify-first development
-- local-first systems where appropriate
-- off-grid independence
-- outdoors/frontier influence
-- gaming and original science-fiction influence
-- evidence-backed claims instead of marketing inflation
+Engineering shorthand:
 
-Private workstation data, credentials, personal records, and private model memory are not public website data.
+OBSERVE -> DIAGNOSE -> REPAIR -> RERUN -> VERIFY -> CONTINUE
 
-## Project worlds
+Public doctrine:
 
-### Nomadic TV — /tv/
+evidence > confidence
 
-Nomadic TV is an active streaming/media platform centered on live channels, guide-driven discovery, household media, movies and shows, virtual linear channels, and curated programming.
+## Hub architecture
 
-Current public engineering truth:
-- canonical integrated source observed at version 0.9.2-integrated / versionCode 11
-- recent device evidence exists for integrated viewer surfaces
-- current integrated physical acceptance is not claimed without a completed device acceptance battery
-- hosted/public media is rights-gated
-- external providers use official routes unless explicit redistribution/streaming rights permit hosting
-- personal media remains private
+Nomadic Labs is the public control plane. Product worlds remain distinct and independently deployable.
 
-Its Freeze-Up Alaska Broadcast / underground-TV identity remains distinct from the Nomadic Labs umbrella design.
+Shared hub responsibilities:
+- public identity and navigation
+- status and evidence vocabulary
+- Ask Nomadic public support
+- privacy/security boundary
+- machine-readable project registry
+- release/evidence conventions
+- stable discovery routes
 
-### Nexus — /nexus/
+Current hub routes:
+- / — Nomadic Labs outpost
+- /about/ — builder and operating philosophy
+- /status/ — project/integration status
+- /privacy/ — public-site privacy boundary
+- /tv/ — Nomadic TV
+- /nexus/ — Nexus
+- /covert/ — Covert
+- /workshop/ — research, project history, evidence, client work, open source, releases
 
-Nexus is the ecosystem catalog and community surface for ToolNeuron / Covert Edge, Covert Desktop, Covert Engine, models, skills, plugins, workflows, connectors, themes, packages, and release metadata.
+## Nomadic TV
+
+Nomadic TV is an active streaming/media platform centered on live channels, guide-driven discovery, household media, movies and shows, virtual-linear channels, and curated programming.
 
 Current public truth:
-- a private reference site and versioned migration handoff exist
-- a real Nexus API boundary exists
-- catalog structure and governed publishing flow are defined
-- production users/publishers, approved public packages, model results, release artifacts, and community counts must remain empty until actually implemented and verified
+- stable hub route exists at /tv/
+- integrated engineering source is observed at version 0.9.2-integrated / versionCode 11
+- current integrated physical acceptance is not claimed without a completed device acceptance battery
+- hosted/public media is rights-gated
+- external providers use official routes unless explicit redistribution rights exist
+- private household media is not public website data
+
+Its Freeze-Up Alaska Broadcast / underground-TV identity remains distinct from the Nomadic Labs outpost.
+
+## Nexus
+
+Nexus is the ecosystem catalog/community layer for ToolNeuron / Covert Edge, Covert Desktop, Covert Engine, models, skills, plugins, workflows, connectors, themes, packages, and release metadata.
+
+The preserved Nexus public reference experience has been migrated under /nexus/ using its original binary-city/data-realm identity and preserved generated environment plates.
+
+Migrated Nexus surfaces:
+- /nexus/ — gateway
+- /nexus/discover/ — searchable preserved catalog
+- /nexus/models/ — truthful empty model registry
+- /nexus/products/ — three explicit product boundaries
+- /nexus/developers/ — preserved publishing contract / forge
+- /nexus/community/ — truthful future-state surface
+- /nexus/downloads/ — truthful distribution node
+- /nexus/releases/ — truthful release ledger
+- /nexus/package/?slug=... — package record inspection
+- /nexus/product/?id=... — product boundary inspection
+- /nexus/data/catalog.json — preserved 11-record public catalog snapshot
+- /nexus/data/models.json — preserved empty model registry
+
+Current Nexus data truth:
+- 11 first-party catalog records
+- 0 published packages
+- 0 published artifacts
+- 0 model records
+- 0 release records
 
 Public API source:
 https://github.com/AnonymousNomad/covert-nexus-api
 
-Its visual identity remains a living binary-city / data-realm rather than a generic green-code background.
+The public hub does not claim production accounts, reviewer authorization, artifact upload, signing, approval, or publication controls.
 
-### Covert — /covert/
+## Covert
 
 Covert is an active local-first governed AI developer-platform program centered on resident assistance, model/runtime control, context control, workflow/orchestration, execution authority, verification, and evidence-backed mission results.
 
@@ -61,80 +96,60 @@ https://github.com/AnonymousNomad/covert-coder
 
 Planned architecture and unfinished features must not be presented as released behavior.
 
-### Workshop — /workshop/
+## Workshop
 
-Workshop is the umbrella index for:
-- research
-- client work
-- open-source contributions
-- prototypes
-- verification evidence
-- release records
+Workshop preserves useful work that does not belong inside one current product.
 
-An experiment or evidence artifact is not automatically a released product.
+Migrated Workshop surfaces:
+- /workshop/projects/ — six projects from the earlier Nomadic Labs public portfolio
+- /workshop/evidence/ — public map of preserved verification snapshots
+- /workshop/research/ — technical research lanes
+- /workshop/client-work/ — delivered client case-study material
+- /workshop/open-source/ — public source/contribution work
+- /workshop/releases/ — release-evidence conventions
 
-## Delivered client work
+Earlier portfolio projects preserved as dated snapshots:
+- AIDE Sovereign Workbench
+- GhostCode
+- Vitalis Core
+- Vitalis Devcore
+- Cyber SOP Harness
+- LOREIN — Sovereign Entity
 
-A recent delivered client example is the Cranes Mill Baptist Church website project, covering redesign, media and sermon integration, maps, events and giving paths, hosting migration, and production publishing.
+Historical evidence is labeled as historical evidence. It is not silently promoted into a current Covert/Nomadic Labs release claim.
 
-## Site architecture
+## Ask Nomadic
 
-Nomadic Labs is the umbrella property and public control plane. Product worlds remain distinct and independently deployable.
+The public site guide:
+- runs server-side through Cloudflare Workers AI
+- answers from curated public project knowledge
+- distinguishes plans, active engineering, migrated references, and released behavior
+- must not expose credentials, private workstation files, personal records, private model memory, or private client material
+- must refuse prompt instructions that attempt to override that boundary
 
-Shared public foundations:
-- project identity and status registry
-- global discovery/navigation contract
-- Ask Nomadic support knowledge
-- release/evidence conventions
-- privacy/security boundary
-- stable hub routes
+## Visual identity
 
-A product subdomain becomes canonical only after its independent deployment is ready and verified. Until then, its stable hub route remains the public entry point.
+Nomadic Labs:
+- remote off-grid engineering outpost
+- northern storm/weather
+- worn power infrastructure
+- unstable blue-white electrical grid
+- water/signal systems
+- restrained original science-fiction atmosphere
 
-Current consolidated routes:
-- / — Nomadic Labs umbrella
-- /about/ — builder and operating philosophy
-- /status/ — public project/integration status
-- /privacy/ — public site and guide privacy boundary
-- /tv/ — Nomadic TV
-- /nexus/ — Nexus
-- /covert/ — Covert
-- /workshop/ — research/client/open-source/release index
+Nexus:
+- living binary-city / data-realm
+- phosphor green
+- transparent terminal/control surfaces
+- environment remains visible through the interface
 
-The public website registry is the source of truth for shared project descriptions and status.
+Nomadic TV:
+- Freeze-Up Alaska Broadcast / underground-TV identity
 
-## Engineering doctrine
+Covert:
+- retro workstation / sovereign developer-platform identity
 
-OBSERVE -> DIAGNOSE -> REPAIR -> RERUN -> VERIFY -> CONTINUE
-
-Public shorthand:
-
-evidence > confidence
-
-## Website guide
-
-The embedded Ask Nomadic guide:
-- uses Cloudflare Workers AI
-- answers from the curated public Nomadic Labs registry
-- distinguishes active engineering from verified/released work
-- says when information is unavailable
-- does not expose credentials, private files, private memories, or workstation data
-
-## Visual direction
-
-The final Nomadic Labs homepage is not intended to be a generic SaaS portfolio.
-
-Direction:
-- restrained professional off-grid frontier environment
-- northern weather and rain
-- worn electrical infrastructure and power lines
-- subtle static discharge
-- water and signal systems
-- restrained holographic instrumentation
-- original science-fiction influence
-- cinematic atmosphere without copying existing franchises
-
-Nomadic TV, Nexus, and Covert retain their own visual systems.
+Shared semantics do not require shared appearance.
 
 ---
 Last updated: 2026-10-23

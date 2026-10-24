@@ -1,7 +1,8 @@
 import { cp, mkdir, rm, copyFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('..', import.meta.url).pathname.replace(/^\/(?:[A-Za-z]:)/, m => m.slice(1));
+const root = fileURLToPath(new URL('..', import.meta.url));
 const out = join(root, 'dist');
 
 const roots = [
@@ -33,11 +34,17 @@ const srcFiles = [
   'src/status.js',
   'src/product-page.js',
   'src/section-page.js',
+  'src/nexus-world.js',
+  'src/nexus-shell.js',
+  'src/nexus.js',
+  'src/workshop.js',
   'src/data/site-registry.js',
   'src/data/section-registry.js',
+  'src/data/workshop-projects.js',
   'src/styles/labs-foundation.css',
   'src/styles/product-foundation.css',
-  'src/styles/hub-page.css'
+  'src/styles/hub-page.css',
+  'src/styles/nexus.css'
 ];
 
 await rm(out, { recursive: true, force: true });

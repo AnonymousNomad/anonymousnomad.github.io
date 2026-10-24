@@ -69,11 +69,15 @@ Canonical engineering source currently lives separately from this site repositor
 
 ### Nexus
 
-The preserved Nexus migration specification remains separate. The public site carries its route/purpose/status contract and links to the separate Nexus API source where appropriate.
+The preserved Nexus public reference experience is migrated under `/nexus/`, including its binary-city visual identity, 11-record catalog snapshot, three product boundaries, developer publishing contract, package inspection, and truthful empty model/download/release/community states. The separate `covert-nexus-api` repository remains the production API/backend boundary.
 
 ### Covert
 
 Covert remains an independently developed product with its own repository and evidence trail.
+
+### Workshop
+
+Workshop now preserves useful material from the earlier Nomadic Labs portfolio: six historical project records, their evidence boundaries, current research lanes, client work, open-source links, and release-evidence conventions.
 
 ## Consolidation contract
 

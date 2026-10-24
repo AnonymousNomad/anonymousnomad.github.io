@@ -1,5 +1,6 @@
 import { SITE, PROJECTS } from '../../src/data/site-registry.js';
 import { TV_SECTIONS, NEXUS_SECTIONS, WORKSHOP_SECTIONS } from '../../src/data/section-registry.js';
+import { WORKSHOP_PROJECTS } from '../../src/data/workshop-projects.js';
 
 export async function onRequestGet() {
   return new Response(JSON.stringify({
@@ -11,7 +12,8 @@ export async function onRequestGet() {
       tv: TV_SECTIONS,
       nexus: NEXUS_SECTIONS,
       workshop: WORKSHOP_SECTIONS
-    }
+    },
+    workshop_projects: WORKSHOP_PROJECTS
   }), {
     status: 200,
     headers: {
