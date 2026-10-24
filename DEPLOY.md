@@ -25,8 +25,11 @@ Never place Cloudflare credentials or OAuth tokens in the repository.
 From a clean repository checkout:
 
 ```powershell
-wrangler pages deploy . --project-name nomadic-labs-hub --branch <preview-branch> --commit-dirty=true
+npm run build
+wrangler pages deploy --project-name nomadic-labs-hub --branch <preview-branch> --commit-dirty=true
 ```
+
+`npm run build` creates a curated `dist/` artifact. Cloudflare must publish that artifact, not the repository root. Legacy source, internal docs, screenshots, and superseded components remain outside the public deployment.
 
 Use a non-production branch for design and integration work.
 
